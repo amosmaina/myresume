@@ -21,10 +21,6 @@
             --border: rgba(255, 255, 255, 0.1);
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
-            /* Brand Colors */
-            --whatsapp: #25D366;
-            --linkedin: #0077b5;
-            --github: #2dba4e;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -37,7 +33,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Animated Mesh Background */
+        /* Animated Gradient Background */
         .mesh-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -48,8 +44,12 @@
             animation: pulse 15s ease infinite alternate;
         }
 
-        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
 
+        /* Glassmorphism Navigation */
         nav {
             position: fixed;
             top: 0; width: 100%;
@@ -63,7 +63,7 @@
             z-index: 1000;
         }
 
-        nav .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color: var(--primary); }
+        nav .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
         nav .nav-links a {
             color: var(--text-dim);
             text-decoration: none;
@@ -75,19 +75,19 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 10% 60px 10%;
+            padding: 0 10%;
             gap: 4rem;
         }
 
-        .hero-content { flex: 1.2; }
-        .hero-image { flex: 0.8; position: relative; display: flex; justify-content: center; }
+        .hero-content { flex: 1; }
+        .hero-image { flex: 1; position: relative; display: flex; justify-content: center; }
         
         .hero-image img {
-            width: 320px;
-            height: 320px;
+            width: 350px;
+            height: 350px;
             object-fit: cover;
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             border: 4px solid var(--primary);
@@ -110,62 +110,48 @@
             margin-bottom: 1rem;
         }
 
-        h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-desc { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem; max-width: 600px; }
 
-        /* Section Reveal */
-        .section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: 0.8s all ease-out; }
+        /* General Section Styling */
+        .section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: 1s all ease-out; }
         .section.visible { opacity: 1; transform: translateY(0); }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
 
-        /* Card Styling */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        /* About Section Icons */
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Card System (Glassmorphism) */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 2rem;
+            padding: 2.5rem;
             backdrop-filter: blur(10px);
             transition: 0.4s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: var(--primary);
             background: rgba(30, 41, 59, 0.8);
         }
 
-        .card h3 { margin: 1rem 0 0.5rem 0; font-size: 1.4rem; }
-        .card p { color: var(--text-dim); font-size: 0.95rem; flex-grow: 1; }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; display: block; }
 
-        /* Buttons */
-        .btn {
-            padding: 0.8rem 1.8rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { border: 1px solid var(--primary); color: var(--primary); background: transparent; }
-        .btn-full { width: 100%; justify-content: center; margin-top: 1.5rem; }
-
-        /* Social Brand Buttons */
-        .btn-whatsapp { background: var(--whatsapp); color: white; }
-        .btn-linkedin { background: var(--linkedin); color: white; }
-        .btn-github { background: var(--github); color: white; }
-        .btn-whatsapp:hover, .btn-linkedin:hover, .btn-github:hover { filter: brightness(1.1); transform: scale(1.05); }
-
-        /* Filters */
-        .filters { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        /* Filter Buttons */
+        .filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
         .filter-btn {
-            padding: 0.6rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 30px;
             border: 1px solid var(--border);
             background: transparent;
@@ -173,9 +159,9 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        .filter-btn.active { background: var(--primary); border-color: var(--primary); }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); border-color: var(--primary); }
 
-        /* Modal */
+        /* Modal Styling */
         .modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -188,17 +174,31 @@
         }
         .modal-box {
             background: #0f172a;
-            max-width: 600px;
-            padding: 2.5rem;
-            border-radius: 24px;
+            max-width: 800px;
+            padding: 3rem;
+            border-radius: 32px;
             border: 1px solid var(--primary);
             position: relative;
-            text-align: center;
         }
+        .close-modal { position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; font-size: 1.5rem; }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; }
+        /* Utilities */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); margin-left: 1rem; }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column-reverse; text-align: center; height: auto; padding-top: 150px; }
             h1 { font-size: 2.5rem; }
+            .about-features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -210,22 +210,23 @@
         <div class="logo">AMOS.MAINA</div>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#what-i-do">Services</a>
             <a href="#projects">Portfolio</a>
-            <a href="#github-repos">Repositories</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <span class="tagline">AI SYSTEMS ARCHITECT & AUTOMATION ENGINEER</span>
-            <h1>Architecting the Future of Enterprise AI</h1>
-            <p class="hero-desc" style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem;">
-                Bridging complex AI research with scalable enterprise software. Expert in RAG, Agentic workflows, and automated business ecosystems.
+            <span class="tagline">AVAILABLE FOR PROJECTS</span>
+            <h1>Amos Maina</h1>
+            <h2 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">AI Systems Architect & Automation Engineer</h2>
+            <p class="hero-desc">
+                Pioneering the next generation of intelligent systems. I specialize in building autonomous agents, RAG-powered intelligence, and high-scale enterprise automation that transforms how businesses operate.
             </p>
             <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">Explore My Work</a>
-                <a href="#contact" class="btn btn-outline">Let's Connect</a>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Start a Conversation</a>
             </div>
         </div>
         <div class="hero-image">
@@ -233,166 +234,161 @@
         </div>
     </section>
 
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2>The Architect's Vision</h2>
+            <p class="hero-desc" style="margin: 0 auto;">With a deep foundation in full-stack development and a passion for Artificial Intelligence, I bridge the gap between complex neural architectures and user-centric business software.</p>
+        </div>
+        <div class="about-features">
+            <div class="card" style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400" alt="Collaboration">
+                <h3>Collaborative Growth</h3>
+                <p>I believe in the power of collective intelligence. Building systems that empower teams to achieve 10x output.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400" alt="Innovation">
+                <h3>Radical Innovation</h3>
+                <p>Pushing the boundaries of what's possible with LLMs, Vector Databases, and Agentic Workflows.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" alt="Learning">
+                <h3>Continuous Evolution</h3>
+                <p>In the fast-paced world of AI, I maintain a relentless learning cycle to stay ahead of the curve.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="what-i-do" class="section">
+        <div class="section-header">
+            <h2>Expertise & Solutions</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="ph ph-robot"></i>
+                <h3>AI Systems & Agents</h3>
+                <p>Autonomous agents capable of complex reasoning, tool-use, and multi-step task execution.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-code"></i>
+                <h3>Modern Web Apps</h3>
+                <p>High-performance interfaces built with React and Tailwind, optimized for speed and SEO.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-flow-arrow"></i>
+                <h3>Intelligent Workflows</h3>
+                <p>Automating repetitive enterprise tasks using LangFlow, Python, and cloud integrations.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-chats-teardrop"></i>
+                <h3>Custom RAG Solutions</h3>
+                <p>Retrieval-Augmented Generation systems that allow you to talk to your private data securely.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="section">
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <h2 style="font-size: 2.5rem;">The Portfolio</h2>
+        <div class="section-header">
+            <h2>Featured Projects</h2>
         </div>
         
         <div class="filters">
-            <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-            <button class="filter-btn" onclick="filterProjects('ai')">AI & Agents</button>
-            <button class="filter-btn" onclick="filterProjects('enterprise')">Enterprise Platforms</button>
-            <button class="filter-btn" onclick="filterProjects('web')">Web Services</button>
+            <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('ai')">AI & RAG</button>
+            <button class="filter-btn" onclick="filterProjects('web')">Web Platforms</button>
         </div>
 
         <div class="grid" id="projectGrid">
             <div class="card ai">
-                <i class="ph ph-chat-centered-dots" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>AI Customer Support Chatbot</h3>
-                <p>24/7 intelligent support reducing manual workload through automated query resolution.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('Support Chatbot', 'Built using GPT-4 and custom knowledge bases to provide context-aware support via web and messaging platforms.')">See Project Now</button>
+                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&w=600" alt="AI Support">
+                <h3>AI Support Architect</h3>
+                <p>Intelligent customer support agent with 65% automated resolution rate.</p>
+                <button class="btn btn-outline" style="margin: 1rem 0 0 0;" onclick="openModal('Support Agent', 'A production-grade AI agent using GPT-4 and Zendesk API integration to handle ticket triaging and automated responses.')">See Project</button>
             </div>
-
             <div class="card ai">
-                <i class="ph ph-file-search" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Document Q&A Assistant (RAG)</h3>
-                <p>Upload documents and get instant answers using Retrieval-Augmented Generation.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('RAG Assistant', 'A specialized system utilizing Pinecone vector storage and LangChain for deep document understanding.')">See Project Now</button>
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600" alt="RAG System">
+                <h3>Document Q&A Assistant</h3>
+                <p>Enterprise RAG system for instant document querying across 50k+ pages.</p>
+                <button class="btn btn-outline" style="margin: 1rem 0 0 0;" onclick="openModal('Document Intelligence', 'Built with Pinecone vector storage and LangChain, this tool enables context-aware search across internal corporate PDFs.')">See Project</button>
             </div>
-
-            <div class="card ai">
-                <i class="ph ph-lightning" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Task & Workflow Automation Agent</h3>
-                <p>Autonomous agent that creates, assigns, and tracks tasks across team workflows.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('Automation Agent', 'Leverages agentic reasoning to coordinate team tasks and send smart notifications.')">See Project Now</button>
+            <div class="card web">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600" alt="Billing System">
+                <h3>ISP Billing Engine</h3>
+                <p>Full-stack automation for ISP subscription and automated invoicing.</p>
+                <button class="btn btn-outline" style="margin: 1rem 0 0 0;" onclick="openModal('ISP Billing', 'A robust Laravel-based platform managing thousands of active users with automated payment gateway integration.')">See Project</button>
             </div>
-
-            <div class="card ai">
-                <i class="ph ph-funnel" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Lead Qualification Chatbot</h3>
-                <p>Automatically qualifies potential leads and collects key information for sales teams.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('Lead Gen Bot', 'Integrates with CRM systems to qualify leads based on custom business logic.')">See Project Now</button>
-            </div>
-
-            <div class="card enterprise">
-                <i class="ph ph-graduation-cap" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Indepth research (IRES)</h3>
-                <p>Professional training website built with Laravel for course management and enrollment.</p>
-                <button class="btn btn-outline btn-full" onclick="window.open('#')">See Project Now</button>
-            </div>
-
-            <div class="card enterprise">
-                <i class="ph ph-receipt" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Internet Billing System</h3>
-                <p>Robust platform for ISP subscription management, usage monitoring, and automated invoicing.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('Billing System', 'Complete automation for ISPs, handling payments and service cycles.')">See Project Now</button>
-            </div>
-
-            <div class="card ai">
-                <i class="ph ph-calendar" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Meeting Scheduler Assistant</h3>
-                <p>Automates scheduling by checking availability and sending calendar invites.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('Meeting AI', 'Eliminates back-and-forth emails through natural language scheduling.')">See Project Now</button>
-            </div>
-
-            <div class="card ai">
-                <i class="ph ph-shield-check" style="font-size: 2rem; color: var(--primary);"></i>
-                <h3>Local Chatbot System</h3>
-                <p>Fully local AI platform for offline conversational support without internet dependency.</p>
-                <button class="btn btn-outline btn-full" onclick="openModal('Local AI', 'Built using Ollama and local LLMs for maximum data privacy and security.')">See Project Now</button>
-            </div>
-
-            </div>
-    </section>
-
-    <section id="github-repos" class="section">
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <h2>Live Code Repositories</h2>
-            <p style="color: var(--text-dim);">Real-time feed from my GitHub profile</p>
         </div>
-        <div class="grid" id="repoList">
-            </div>
     </section>
 
     <section id="contact" class="section">
-        <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto; padding: 4rem 2rem;">
-            <h2>Ready to Transform Your Workflow?</h2>
-            <p style="margin: 1.5rem 0 3rem 0; color: var(--text-dim);">Choose your preferred way to reach me.</p>
-            
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
-                <a href="https://wa.me/254741964877" class="btn btn-whatsapp">
-                    <i class="ph ph-whatsapp-logo"></i> WhatsApp
-                </a>
-                <a href="https://linkedin.com/in/amosmaina" class="btn btn-linkedin">
-                    <i class="ph ph-linkedin-logo"></i> LinkedIn
-                </a>
-                <a href="https://github.com/amosmaina/" class="btn btn-github">
-                    <i class="ph ph-github-logo"></i> GitHub
-                </a>
-                <a href="mailto:amos@example.com" class="btn btn-primary">
-                    <i class="ph ph-envelope"></i> Email Me
-                </a>
+        <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2>Let's Build Something Intelligent</h2>
+            <p class="hero-desc" style="margin: 1rem auto 2rem auto;">Currently accepting new projects and high-impact engineering opportunities.</p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                <a href="mailto:amos@example.com" class="nav-links" style="color: white;"><i class="ph ph-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/amosmaina" class="nav-links" style="color: white;"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                <a href="https://wa.me/254741964877" class="nav-links" style="color: white;"><i class="ph ph-whatsapp-logo"></i> WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <div class="modal" id="pModal">
+    <div class="modal" id="projectModal">
         <div class="modal-box">
-            <span style="position: absolute; top: 1rem; right: 1.5rem; cursor: pointer; font-size: 1.5rem;" onclick="closeModal()">×</span>
-            <h2 id="modalTitle" style="color: var(--primary); margin-bottom: 1rem;"></h2>
-            <p id="modalDesc" style="color: var(--text-dim); margin-bottom: 2rem;"></p>
-            <a href="#" class="btn btn-primary">View Case Study</a>
+            <span class="close-modal" onclick="closeModal()"><i class="ph ph-x"></i></span>
+            <h2 id="mTitle" style="color: var(--primary); margin-bottom: 1rem;">Project Title</h2>
+            <p id="mDesc" style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem;">Full project description goes here.</p>
+            <a href="#" class="btn btn-primary">Live Demo</a>
         </div>
     </div>
 
     <footer style="padding: 4rem; text-align: center; color: var(--text-dim); border-top: 1px solid var(--border);">
-        <p>© 2026 Amos Maina | Building Intelligent Systems Globally</p>
+        <p>© 2026 Amos Maina | Designed for the AI Era</p>
     </footer>
 
     <script>
-        // Intersection Observer for animations
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.section').forEach(s => obs.observe(s));
+        // Scroll Reveal Animation
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
 
-        // Filtering
-        function filterProjects(cat) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('#projectGrid .card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            document.querySelectorAll('#projectGrid .card').forEach(c => {
-                c.style.display = (cat === 'all' || c.classList.contains(cat)) ? 'flex' : 'none';
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         }
 
         // Modal Logic
-        function openModal(t, d) {
-            document.getElementById('modalTitle').innerText = t;
-            document.getElementById('modalDesc').innerText = d;
-            document.getElementById('pModal').style.display = 'flex';
+        function openModal(title, desc) {
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mDesc').innerText = desc;
+            document.getElementById('projectModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
-        function closeModal() { document.getElementById('pModal').style.display = 'none'; }
 
-        // Fetch GitHub Repos
-        fetch('https://api.github.com/users/amosmaina/repos?sort=updated&per_page=6')
-            .then(res => res.json())
-            .then(data => {
-                const list = document.getElementById('repoList');
-                data.forEach(repo => {
-                    const div = document.createElement('div');
-                    div.className = 'card';
-                    div.innerHTML = `
-                        <div style="display:flex; justify-content:space-between; align-items:start;">
-                            <i class="ph ph-git-repository" style="font-size: 1.5rem; color: var(--github);"></i>
-                            <span style="font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 2px 8px; border-radius: 10px;">${repo.language || 'Code'}</span>
-                        </div>
-                        <h3>${repo.name}</h3>
-                        <p>${repo.description || 'Public repository for system architecture and development.'}</p>
-                        <a href="${repo.html_url}" target="_blank" class="btn btn-outline btn-full" style="border-color: var(--github); color: var(--github);">View Repository</a>
-                    `;
-                    list.appendChild(div);
-                });
-            });
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('projectModal')) closeModal();
+        }
     </script>
 </body>
 </html>

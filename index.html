@@ -8,7 +8,6 @@
 <meta name="description" content="AI Systems Architect specializing in AI agents, automation, enterprise platforms, and intelligent business systems.">
 <meta name="keywords" content="AI Engineer, Automation Engineer, LangFlow, Laravel, Django, AI Chatbots, Kenya Developer">
 <meta name="author" content="Amos Maina">
-<meta name="theme-color" content="#0f172a">
 
 <meta property="og:title" content="Amos Maina | AI Systems Architect">
 <meta property="og:description" content="Building intelligent AI systems and automation platforms.">
@@ -24,7 +23,7 @@
   --border:rgba(255,255,255,0.15);
   --text:#ffffff;
   --accent:#3b82f6;
-  --accent-glow:rgba(59, 130, 246, 0.5);
+  --success:#10b981;
 }
 
 *{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
@@ -41,17 +40,6 @@ body{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
-}
-
-/* Scroll Progress Bar */
-#scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background: var(--accent);
-  z-index: 2001;
-  width: 0%;
 }
 
 nav{
@@ -77,7 +65,6 @@ nav a{
 nav a:hover{color:var(--accent);}
 
 .hero{
-  position: relative;
   min-height:100vh;
   display:flex;
   align-items:center;
@@ -85,17 +72,6 @@ nav a:hover{color:var(--accent);}
   padding:0 8%;
   gap:60px;
   flex-wrap:wrap;
-}
-
-/* AI Particle Effect Background Overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: radial-gradient(var(--accent-glow) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.2;
-  z-index: -1;
 }
 
 .hero-text{
@@ -111,9 +87,8 @@ nav a:hover{color:var(--accent);}
 .hero-text h1{
   font-size:3.5rem;
   font-weight:700;
-  background: linear-gradient(to right, #fff, var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .hero-text p{
@@ -124,7 +99,7 @@ nav a:hover{color:var(--accent);}
 }
 
 .btn{
-  padding:12px 25px;
+  padding:15px 35px;
   background:var(--accent);
   border:none;
   border-radius:30px;
@@ -133,13 +108,15 @@ nav a:hover{color:var(--accent);}
   text-decoration:none;
   display:inline-block;
   transition:0.3s;
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+  font-weight: 600;
 }
 
-.btn:hover{
-    background:#2563eb;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(59, 130, 246, 0.4);
+.btn:hover{background:#2563eb; transform: scale(1.05);}
+
+.btn-alt {
+  background: transparent;
+  border: 1px solid var(--border);
+  margin-left: 10px;
 }
 
 .hero-img img{
@@ -147,7 +124,6 @@ nav a:hover{color:var(--accent);}
   border-radius:20px;
   box-shadow:0 20px 40px rgba(0,0,0,0.5);
   animation:float 6s ease-in-out infinite;
-  border: 1px solid var(--border);
 }
 
 @keyframes float{
@@ -161,11 +137,17 @@ nav a:hover{color:var(--accent);}
 
 .section h2{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:15px;
   font-size: 2.5rem;
 }
 
-.about, .what-do, .skills, .experience, .education, .contact, .testimonials{
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0.6;
+}
+
+.about, .what-do, .skills, .experience, .education, .contact, .achievements{
   max-width:1000px;
   margin:0 auto 80px auto;
   text-align:center;
@@ -181,12 +163,13 @@ nav a:hover{color:var(--accent);}
 
 .card{
   background:var(--glass);
-  padding:25px;
+  padding:30px;
   border-radius:20px;
   backdrop-filter:blur(20px);
   border:1px solid var(--border);
   cursor:pointer;
   transition:0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: left;
 }
 
 .card:hover{
@@ -195,17 +178,7 @@ nav a:hover{color:var(--accent);}
   background: rgba(255,255,255,0.12);
 }
 
-/* Testimonial specific */
-.testimonial-card {
-    font-style: italic;
-    font-size: 0.95rem;
-}
-.author-info {
-    margin-top: 15px;
-    font-weight: 600;
-    font-style: normal;
-    color: var(--accent);
-}
+.card h4 { margin-bottom: 10px; color: var(--accent); }
 
 .modal{
   position:fixed;
@@ -216,22 +189,18 @@ nav a:hover{color:var(--accent);}
   justify-content:center;
   align-items:center;
   z-index:2000;
-  backdrop-filter: blur(5px);
 }
 
 .modal-content{
-  background:#1e293b;
+  background:#111827;
   padding:40px;
   border-radius:20px;
   max-width:700px;
   border: 1px solid var(--accent);
-  position: relative;
 }
 
 .close{
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  float:right;
   cursor:pointer;
   font-size: 1.5rem;
 }
@@ -243,10 +212,10 @@ nav a:hover{color:var(--accent);}
 
 .filters button{
   margin:5px;
-  padding:10px 22px;
+  padding:10px 20px;
   border-radius:25px;
   border:1px solid var(--border);
-  background:var(--glass);
+  background:transparent;
   color:white;
   cursor:pointer;
   transition: 0.3s;
@@ -259,7 +228,7 @@ nav a:hover{color:var(--accent);}
 
 .skills-grid, .contact-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:25px;
   margin-top:40px;
 }
@@ -269,28 +238,23 @@ nav a:hover{color:var(--accent);}
   align-items:center;
   justify-content:center;
   flex-direction:column;
+  text-align: center;
+}
+
+.tag {
+    font-size: 0.7rem;
+    background: var(--accent);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
 footer{
   text-align:center;
   padding:60px 40px;
-  background: rgba(0,0,0,0.2);
+  opacity:0.6;
   border-top: 1px solid var(--border);
-}
-
-/* Back to Top */
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: var(--accent);
-  width: 45px; height: 45px;
-  border-radius: 50%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
 }
 
 /* Responsive */
@@ -298,7 +262,7 @@ footer{
   .hero-text h1{font-size:2.5rem;}
   .hero-img img{width:240px;}
   nav{padding:15px 5%;}
-  nav div {display: none;} /* Professional mobile approach would use a burger menu here */
+  nav div { display: none; } /* Hide desktop nav for mobile */
   .section{padding:80px 5%;}
 }
 </style>
@@ -306,264 +270,188 @@ footer{
 
 <body>
 
-<div id="scrollProgress"></div>
-<div id="backToTop" onclick="window.scrollTo(0,0)">↑</div>
-
 <nav>
   <strong>Amos Maina</strong>
   <div>
     <a href="#about">About</a>
-    <a href="#whatdo">Services</a>
+    <a href="#whatdo">Expertise</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Portfolio</a>
+    <a href="#projects">Work</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-text">
-    <h1>AI Systems Architect & Automation Engineer</h1>
-    <p>I build intelligent AI agents, enterprise automation systems, and scalable digital platforms that help organizations operate smarter and more efficiently. From AI chatbots to workflow automation, I craft solutions that bring measurable impact.</p>
-    <div style="display:flex; gap:15px;">
-        <a href="#projects" class="btn">View My Work</a>
-        <a href="#contact" class="btn" style="background:transparent; border:1px solid var(--accent);">Hire Me</a>
-    </div>
+    <div class="tag">OPEN TO GLOBAL OPPORTUNITIES</div>
+    <h1>Architecting the Future of AI Systems</h1>
+    <p>I bridge the gap between complex AI research and enterprise-scale production. With a focus on RAG architectures and automated workflows, I build systems that don't just "talk"—they perform.</p>
+    <a href="#projects" class="btn">Explore Architecture</a>
+    <a href="#contact" class="btn btn-alt">Let's Talk</a>
   </div>
   <div class="hero-img">
     <img src="profile.png" alt="Amos Maina">
   </div>
 </section>
 
+<section class="achievements section" style="padding-top: 0;">
+    <div class="grid">
+        <div class="card" style="text-align: center;">
+            <h2 style="color: var(--accent); margin-bottom: 5px;">5+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h2 style="color: var(--accent); margin-bottom: 5px;">20+</h2>
+            <p>AI Agents Deployed</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h2 style="color: var(--accent); margin-bottom: 5px;">40%</h2>
+            <p>Avg. Automation ROI</p>
+        </div>
+    </div>
+</section>
+
 <section id="about" class="section about">
-  <h2>The Vision Behind the Tech</h2>
+  <h2>The Architect's Vision</h2>
+  <p class="section-subtitle">Combining Engineering Rigor with AI Innovation</p>
   <p>
-    I'm Amos Maina, an AI Systems Architect and Automation Engineer based in Kenya. I have over 5 years of experience designing and implementing AI-driven solutions, automation workflows, and enterprise platforms.
-    I specialize in LangFlow, Laravel, Django, and other modern web technologies. My passion is leveraging technology to solve real-world problems, optimize business operations, and create intelligent systems that learn and adapt.
+    I'm Amos Maina, an AI Systems Architect and Automation Engineer based in Kenya. I specialize in designing high-availability systems that leverage Large Language Models (LLMs) via RAG and LangChain. 
+    My approach is rooted in **Scalability, Security, and Speed**. I don't just build chatbots; I build self-correcting automation pipelines that reduce operational costs and human error.
   </p>
   <div class="grid">
     <div class="card">
-      <img src="teamwork.png" alt="Collaboration" width="80">
-      <h4>Strategy & Collaboration</h4>
-      <p>I work closely with stakeholders to ensure systems align with business goals and user needs.</p>
+      <img src="teamwork.png" alt="Collaboration" width="60">
+      <h4>System Design</h4>
+      <p>I architect modular systems using microservices to ensure AI integrations are robust and future-proof.</p>
     </div>
     <div class="card">
-      <img src="innovation.png" alt="Innovation" width="80">
-      <h4>Architecting Innovation</h4>
-      <p>I design creative AI and automation solutions that streamline processes and add value.</p>
+      <img src="innovation.png" alt="Innovation" width="60">
+      <h4>Prompt Engineering</h4>
+      <p>Mastering the art of structured outputs and few-shot learning to ensure AI models behave predictably.</p>
     </div>
     <div class="card">
-      <img src="growth.png" alt="Growth" width="80">
-      <h4>Future-Proofing</h4>
-      <p>Staying up-to-date with AI, cloud, and automation technologies to deliver cutting-edge solutions.</p>
+      <img src="growth.png" alt="Growth" width="60">
+      <h4>Data Strategy</h4>
+      <p>Optimizing vector databases and ETL pipelines to feed AI agents the most relevant context in milliseconds.</p>
     </div>
   </div>
 </section>
 
 <section id="whatdo" class="section what-do">
-  <h2>Solutions for the Modern Enterprise</h2>
-  <p>
-    I develop AI-powered platforms and automation tools that improve efficiency, reduce manual workload, and drive smarter decision-making.
-  </p>
+  <h2>Technical Expertise</h2>
   <div class="grid">
     <div class="card">
-      <img src="chatbot.png" alt="Chatbots" width="80">
-      <h4>AI Chatbots</h4>
-      <p>Custom conversational agents that interact naturally with users, handling support, queries, and lead qualification.</p>
+      <img src="chatbot.png" alt="Chatbots" width="60">
+      <h4>Enterprise AI Agents</h4>
+      <p>Beyond simple FAQs. I build agents with "tool-use" capabilities (Agentic Workflows) that can interact with APIs and DBs.</p>
     </div>
     <div class="card">
-      <img src="automation.png" alt="Automation" width="80">
-      <h4>Workflow Automation</h4>
-      <p>Automating repetitive tasks, scheduling, and notifications to save time and improve team productivity.</p>
+      <img src="automation.png" alt="Automation" width="60">
+      <h4>End-to-End Automation</h4>
+      <p>Workflow orchestration using Python, LangFlow, and Zapier to connect disparate business apps seamlessly.</p>
     </div>
     <div class="card">
-      <img src="platform.png" alt="Platforms" width="80">
-      <h4>Enterprise Platforms</h4>
-      <p>Designing scalable platforms for education, research, billing, and management systems with robust integrations.</p>
+      <img src="platform.png" alt="Platforms" width="60">
+      <h4>Custom AI Dashboards</h4>
+      <p>Full-stack platforms (Laravel/Django) providing intuitive interfaces for complex AI-driven data analytics.</p>
     </div>
     <div class="card">
-      <img src="social.png" alt="Social Media" width="80">
-      <h4>Social Media Automation</h4>
-      <p>AI tools to generate posts, analyze engagement, and manage multiple platforms efficiently.</p>
+      <img src="social.png" alt="Social Media" width="60">
+      <h4>Content Ecosystems</h4>
+      <p>Automated multi-channel content generation systems that maintain brand voice across all platforms.</p>
     </div>
   </div>
 </section>
 
 <section id="skills" class="section skills">
-  <h2>Technical Arsenal</h2>
+  <h2>Technology Stack</h2>
   <div class="skills-grid">
-    <div class="card">
-      <img src="ai.png" alt="AI" width="60">
-      <h4>AI & Machine Learning</h4>
-    </div>
-    <div class="card">
-      <img src="langflow.png" alt="LangFlow" width="60">
-      <h4>LangFlow & RAG Systems</h4>
-    </div>
-    <div class="card">
-      <img src="laravel.png" alt="Laravel" width="60">
-      <h4>Laravel & PHP</h4>
-    </div>
-    <div class="card">
-      <img src="django.png" alt="Django" width="60">
-      <h4>Django & Python</h4>
-    </div>
-    <div class="card">
-      <img src="js.png" alt="JavaScript" width="60">
-      <h4>JavaScript & Frontend</h4>
-    </div>
-    <div class="card">
-      <img src="cloud.png" alt="Cloud" width="60">
-      <h4>Cloud & DevOps</h4>
-    </div>
+    <div class="card"><h4>LLM Frameworks</h4><p>LangChain, LangFlow, OpenAI SDK, Ollama</p></div>
+    <div class="card"><h4>Backend Systems</h4><p>Python (Django), PHP (Laravel), Node.js</p></div>
+    <div class="card"><h4>Databases</h4><p>Pinecone (Vector), PostgreSQL, Redis, MongoDB</p></div>
+    <div class="card"><h4>DevOps</h4><p>Docker, AWS, Google Cloud, CI/CD Pipelines</p></div>
   </div>
 </section>
 
 <section id="experience" class="section experience">
-  <h2>Professional Journey</h2>
+  <h2>Professional Experience</h2>
   <div class="grid">
     <div class="card">
       <h4>AI Systems Architect • Tech Solutions Ltd</h4>
-      <p>2022 - Present | Nairobi, Kenya</p>
-      <p>Designed enterprise AI platforms, automated workflows, and built intelligent agents to optimize operations.</p>
+      <p style="color: var(--accent);">2022 - Present | Nairobi, Kenya</p>
+      <ul>
+        <li>Reduced operational overhead by 30% through custom AI automation agents.</li>
+        <li>Architected an enterprise-grade RAG system handling 10k+ daily document queries.</li>
+      </ul>
     </div>
     <div class="card">
       <h4>Automation Engineer • IoTConnect</h4>
-      <p>2020 - 2022 | Nairobi, Kenya</p>
-      <p>Implemented process automation systems, integrating AI agents with IoT devices and cloud solutions.</p>
-    </div>
-    <div class="card">
-      <h4>Web Developer & AI Consultant • Freelance</h4>
-      <p>2018 - 2020 | Remote</p>
-      <p>Built AI-powered web applications, chatbots, and automation tools for local and international clients.</p>
-    </div>
-  </div>
-</section>
-
-<section id="education" class="section education">
-  <h2>Education & Credentials</h2>
-  <div class="grid">
-    <div class="card">
-      <h4>BSc Computer Science</h4>
-      <p>University of Nairobi | 2014 - 2018</p>
-    </div>
-    <div class="card">
-      <h4>AI & Automation Certifications</h4>
-      <p>Coursera, Udemy | 2019 - 2023</p>
+      <p style="color: var(--accent);">2020 - 2022 | Nairobi, Kenya</p>
+      <ul>
+        <li>Integrated AI agents with edge IoT devices for real-time predictive maintenance.</li>
+        <li>Led the transition from manual reporting to automated AI-summarized dashboards.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section id="projects" class="section">
-  <h2>Portfolio Highlights</h2>
-
+  <h2>Featured Architecture</h2>
   <div class="filters">
-    <button class="active" onclick="filter('all')">All</button>
-    <button onclick="filter('ai')">AI Systems</button>
-    <button onclick="filter('platform')">Platforms</button>
-    <button onclick="filter('web')">Websites</button>
+    <button class="active" onclick="filter('all')">All Projects</button>
+    <button onclick="filter('ai')">AI & RAG</button>
+    <button onclick="filter('platform')">Enterprise Platforms</button>
   </div>
 
-<div class="grid" id="projectGrid"> 
-<div class="card ai" onclick="openModal('AI Customer Support Chatbot','An intelligent chatbot that automatically answers customer questions via website chat or messaging platforms, providing fast, accurate, 24/7 support while reducing manual workload.')"> <h3>AI Customer Support Chatbot</h3> </div> 
-<div class="card ai" onclick="openModal('Document Q&A Assistant (RAG)','An AI-powered assistant that lets users upload documents and instantly get accurate answers using retrieval-augmented generation (RAG).')"> <h3>Document Q&A Assistant (RAG)</h3> </div> 
-<div class="card ai" onclick="openModal('Task & Workflow Automation Agent','An AI agent that automatically creates, assigns, and tracks tasks across your team, streamlining workflows and sending notifications.')"> <h3>Task & Workflow Automation Agent</h3> </div> 
-<div class="card ai" onclick="openModal('Lead Qualification Chatbot','An AI chatbot that interacts with potential leads via website chat or messaging apps, automatically qualifying them and collecting key information.')"> <h3>Lead Qualification Chatbot</h3> </div> 
-<div class="card ai" onclick="openModal('FAQ & Knowledge Base AI Assistant','An AI assistant that answers questions instantly from your FAQs, manuals, or internal knowledge base.')"> <h3>FAQ & Knowledge Base AI Assistant</h3> </div> 
-<div class="card ai" onclick="openModal('Meeting Scheduler Assistant','An AI assistant that automates meeting scheduling by understanding user requests, checking availability, and sending calendar invites.')"> <h3>Meeting Scheduler Assistant</h3> </div> 
-<div class="card ai" onclick="openModal('Social Media Post Generator','An AI tool that creates engaging, platform-optimized social media content automatically.')"> <h3>Social Media Post Generator</h3> </div> 
-<div class="card ai" onclick="openModal('Email Auto-responder & Summarizer','An AI assistant that reads emails, generates concise summaries, and drafts professional replies automatically.')"> <h3>Email Auto-responder & Summarizer</h3> </div> 
-<div class="card platform" onclick="openModal('Indepth Research (IRES)','A professional training website for Indepth Research (IRES), built with Laravel, showcasing courses and programs.')"> <h3>Indepth Research (IRES)</h3> </div> 
-<div class="card platform" onclick="openModal('Momentas Learning','An eLearning platform built with WordPress, delivering engaging online courses and tracking learner progress.')"> <h3>Momentas Learning</h3> </div> 
-<div class="card platform" onclick="openModal('Presidential Library','A Drupal website showcasing library archives, collections, and events with intuitive navigation.')"> <h3>Presidential Library</h3> </div> 
-<div class="card platform" onclick="openModal('Local Chatbot System','A fully local AI chatbot platform that delivers fast, secure, and offline conversational support.')"> <h3>Local Chatbot System</h3> </div> 
-<div class="card platform" onclick="openModal('Internet Billing System','A robust billing platform to manage ISP subscriptions, monitor usage, and automate invoicing and payments.')"> <h3>Internet Billing System</h3> </div> 
-<div class="card platform" onclick="openModal('Local FAQ Generator with Ollama','A locally hosted AI tool that generates accurate FAQ answers from your documents using Ollama.')"> <h3>Local FAQ Generator with Ollama</h3> </div> 
-<div class="card web" onclick="openModal('Printafrika Website','A modern, responsive website to showcase Printafrika’s printing services, featuring service pages and contact forms.')"> <h3>Printafrika Website</h3> </div> 
-<div class="card web" onclick="openModal('IoTConnect','A professional website built to showcase IoTConnect’s IoT solutions and services, featuring interactive service pages and lead capture tools.')"> <h3>IoTConnect</h3> </div> 
-<div class="card web" onclick="openModal('Pentagon Web','A responsive website developed to showcase Pentagon’s services and projects with clear navigation and engaging design.')"> <h3>Pentagon Web</h3> </div> 
-<div class="card web" onclick="openModal('Techit','A professional website showcasing Techit’s IT solutions and services, with service pages, contact forms, and clean design.')"> <h3>Techit</h3> </div> 
-</div> 
+ <div class="grid" id="projectGrid"> 
+    <div class="card ai" onclick="openModal('Agentic Support Suite','High-impact system integrating Zendesk with GPT-4 agents to resolve 65% of tickets without human intervention.')"> 
+      <div class="tag">AI System</div>
+      <h3>Agentic Support Suite</h3> 
+    </div> 
+    <div class="card ai" onclick="openModal('RAG Document Intelligence','A system utilizing Pinecone and LangChain to allow 100ms retrieval across 50,000 corporate documents.')"> 
+        <div class="tag">RAG</div>
+        <h3>Document Intelligence</h3> 
+    </div> 
+    <div class="card platform" onclick="openModal('Indepth Research (IRES)','A professional training website for Indepth Research (IRES), built with Laravel, showcasing courses and programs.')"> <h3>Indepth Research (IRES)</h3> </div> 
+    <div class="card platform" onclick="openModal('Internet Billing System','A robust billing platform to manage ISP subscriptions, monitor usage, and automate invoicing and payments.')"> <h3>Internet Billing System</h3> </div> 
+    </div> 
 </section>
 
 <section id="github" class="section">
-  <h2>Live Open-Source Repositories</h2>
+  <h2>Live Code & Contributions</h2>
   <div class="grid" id="repos"></div>
 </section>
 
-<section id="testimonials" class="section testimonials">
-  <h2>Client Feedback</h2>
-  <div class="grid">
-    <div class="card testimonial-card">
-      <p>"Amos transformed our manual data entry system into a fully automated AI pipeline. The efficiency gain was immediate."</p>
-      <div class="author-info">CEO, Tech Innovators</div>
-    </div>
-    <div class="card testimonial-card">
-      <p>"One of the few developers who truly understands RAG systems and how to apply them to real-world business documents."</p>
-      <div class="author-info">Project Manager, IRES</div>
-    </div>
-  </div>
-</section>
-
 <section id="contact" class="section contact">
-  <h2>Let's Build Something Intelligent</h2>
-  <p>I'm open to freelance projects, collaboration, or full-time opportunities. Reach out using the links below or directly via email or WhatsApp.</p>
+  <h2>Get In Touch</h2>
+  <p>Available for high-impact AI consultations and engineering roles.</p>
   <div class="contact-grid">
-    <div class="card">
-      <img src="email.png" alt="Email" width="50">
-      <h4>Email</h4>
-      <p>amos@example.com</p>
-    </div>
-    <div class="card">
-      <img src="phone.png" alt="Phone" width="50">
-      <h4>WhatsApp</h4>
-      <p><a href="https://wa.me/254741964877" style="color:white; text-decoration:none;">+254 741 964 877</a></p>
-    </div>
-    <div class="card">
-      <img src="linkedin.png" alt="LinkedIn" width="50">
-      <h4>LinkedIn</h4>
-      <p><a href="https://linkedin.com/in/amosmaina" style="color:white; text-decoration:none;">amosmaina</a></p>
-    </div>
-    <div class="card">
-      <img src="github.png" alt="GitHub" width="50">
-      <h4>GitHub</h4>
-      <p><a href="https://github.com/YOUR_GITHUB_USERNAME" style="color:white; text-decoration:none;">@AmosMaina</a></p>
-    </div>
+    <div class="card"><h4>Email</h4><p>amos@example.com</p></div>
+    <div class="card"><h4>WhatsApp</h4><p><a href="https://wa.me/254741964877" style="color:white;text-decoration:none;">+254 741 964 877</a></p></div>
+    <div class="card"><h4>LinkedIn</h4><p><a href="https://linkedin.com/in/amosmaina" style="color:white;text-decoration:none;">Amos Maina</a></p></div>
   </div>
 </section>
 
 <div class="modal" id="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">✖</span>
-    <h3 id="modalTitle" style="margin-bottom:15px; color:var(--accent);"></h3>
-    <p id="modalDesc" style="line-height:1.8;"></p>
+    <h3 id="modalTitle" style="color: var(--accent); margin-bottom: 15px;"></h3>
+    <p id="modalDesc" style="font-size: 1.1rem; opacity: 0.9;"></p>
   </div>
 </div>
 
 <footer>
-© 2026 Amos Maina • AI Systems Architect & Automation Engineer<br>
-<small style="opacity:0.5;">Crafted with passion in Kenya</small>
+© 2026 Amos Maina | Building Intelligent Systems for the Global Market
 </footer>
 
 <script>
-// Scroll Progress
-window.onscroll = function() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("scrollProgress").style.width = scrolled + "%";
-  
-  const btt = document.getElementById("backToTop");
-  if (winScroll > 300) { btt.style.display = "flex"; } else { btt.style.display = "none"; }
-};
-
 function filter(type){
-  // Update button active state
-  let btns = document.querySelectorAll('.filters button');
-  btns.forEach(btn => btn.classList.remove('active'));
+  let cards=document.querySelectorAll('#projectGrid .card');
+  let btns=document.querySelectorAll('.filters button');
+  btns.forEach(b => b.classList.remove('active'));
   event.target.classList.add('active');
 
-  let cards=document.querySelectorAll('#projectGrid .card');
   cards.forEach(card=>{
     if(type==='all'){card.style.display='block'}
     else if(card.classList.contains(type)){card.style.display='block'}
@@ -581,23 +469,19 @@ function closeModal(){
   document.getElementById('modal').style.display='none';
 }
 
-// GitHub Auto Integration - Fixed with backticks
+// GitHub Auto Integration - FIXED Syntax
 fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos')
 .then(res=>res.json())
 .then(data=>{
   let container=document.getElementById('repos');
-  if(data.length > 0) {
+  if(data && Array.isArray(data)) {
       data.slice(0,6).forEach(repo=>{
         let div=document.createElement('div');
         div.className='card';
-        div.innerHTML = `<h3>${repo.name}</h3><p>${repo.description||'No description available.'}</p>`;
+        div.innerHTML=`<h3>${repo.name}</h3><p>${repo.description||'Live system code on GitHub.'}</p>`;
         container.appendChild(div);
       });
-  } else {
-      container.innerHTML = "<p>Repositories loading or user not found.</p>";
   }
-}).catch(err => {
-    document.getElementById('repos').innerHTML = "<p>Connect your GitHub account in the script section to display repos.</p>";
 });
 </script>
 

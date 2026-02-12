@@ -1,489 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amos Maina | AI Systems Architect & Automation Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amos Maina | AI Systems Architect & Automation Engineer</title>
 
-<meta name="description" content="AI Systems Architect specializing in AI agents, automation, enterprise platforms, and intelligent business systems.">
-<meta name="keywords" content="AI Engineer, Automation Engineer, LangFlow, Laravel, Django, AI Chatbots, Kenya Developer">
-<meta name="author" content="Amos Maina">
+    <meta name="description" content="AI Systems Architect specializing in AI agents, RAG architectures, and enterprise automation.">
+    <meta name="keywords" content="AI Engineer, Automation, LangChain, React, Python, RAG, Software Architect">
+    <meta name="author" content="Amos Maina">
 
-<meta property="og:title" content="Amos Maina | AI Systems Architect">
-<meta property="og:description" content="Building intelligent AI systems and automation platforms.">
-<meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --bg-dark: #020617;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-<style>
-:root{
-  --bg1:#0f172a;
-  --bg2:#1e293b;
-  --glass:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.15);
-  --text:#ffffff;
-  --accent:#3b82f6;
-  --success:#10b981;
-}
+        /* Animated Gradient Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #1e293b 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, #0f172a 0%, transparent 100%);
+            animation: pulse 15s ease infinite alternate;
+        }
 
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
-body{
-  background:linear-gradient(-45deg,var(--bg1),var(--bg2),#111827,#0f172a);
-  background-size:400% 400%;
-  animation:gradient 15s ease infinite;
-  color:var(--text);
-  overflow-x:hidden;
-  scroll-behavior:smooth;
-}
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
 
-@keyframes gradient{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
+        /* Glassmorphism Navigation */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(12px);
+            background: rgba(2, 6, 23, 0.8);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
 
-nav{
-  position:fixed;
-  width:100%;
-  padding:20px 8%;
-  display:flex;
-  justify-content:space-between;
-  backdrop-filter:blur(20px);
-  background:var(--glass);
-  border-bottom:1px solid var(--border);
-  z-index:1000;
-}
+        nav .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+        nav .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav .nav-links a:hover { color: var(--primary); }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
-  transition: 0.3s;
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            gap: 4rem;
+        }
 
-nav a:hover{color:var(--accent);}
+        .hero-content { flex: 1; }
+        .hero-image { flex: 1; position: relative; display: flex; justify-content: center; }
+        
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            border: 4px solid var(--primary);
+            animation: morph 8s ease-in-out infinite;
+        }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 8%;
-  gap:60px;
-  flex-wrap:wrap;
-}
+        @keyframes morph {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
 
-.hero-text{
-  max-width:600px;
-  animation:fadeUp 1.2s ease forwards;
-}
+        .tagline {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
 
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
+        h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-desc { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2rem; max-width: 600px; }
 
-.hero-text h1{
-  font-size:3.5rem;
-  font-weight:700;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
+        /* General Section Styling */
+        .section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: 1s all ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
 
-.hero-text p{
-  margin:20px 0;
-  opacity:0.85;
-  line-height:1.6;
-  font-size: 1.1rem;
-}
+        /* About Section Icons */
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
-.btn{
-  padding:15px 35px;
-  background:var(--accent);
-  border:none;
-  border-radius:30px;
-  color:white;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-  transition:0.3s;
-  font-weight: 600;
-}
+        /* Card System (Glassmorphism) */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
 
-.btn:hover{background:#2563eb; transform: scale(1.05);}
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.8);
+        }
 
-.btn-alt {
-  background: transparent;
-  border: 1px solid var(--border);
-  margin-left: 10px;
-}
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; display: block; }
 
-.hero-img img{
-  width:320px;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
-  animation:float 6s ease-in-out infinite;
-}
+        /* Filter Buttons */
+        .filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); border-color: var(--primary); }
 
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-20px);}
-}
+        /* Modal Styling */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 6, 23, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 2rem;
+        }
+        .modal-box {
+            background: #0f172a;
+            max-width: 800px;
+            padding: 3rem;
+            border-radius: 32px;
+            border: 1px solid var(--primary);
+            position: relative;
+        }
+        .close-modal { position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; font-size: 1.5rem; }
 
-.section{
-  padding:120px 8%;
-}
+        /* Utilities */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); margin-left: 1rem; }
 
-.section h2{
-  text-align:center;
-  margin-bottom:15px;
-  font-size: 2.5rem;
-}
-
-.section-subtitle {
-  text-align: center;
-  margin-bottom: 60px;
-  opacity: 0.6;
-}
-
-.about, .what-do, .skills, .experience, .education, .contact, .achievements{
-  max-width:1000px;
-  margin:0 auto 80px auto;
-  text-align:center;
-  opacity:0.95;
-  line-height:1.6;
-}
-
-.grid{
-  display:grid;
-  gap:25px;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
-
-.card{
-  background:var(--glass);
-  padding:30px;
-  border-radius:20px;
-  backdrop-filter:blur(20px);
-  border:1px solid var(--border);
-  cursor:pointer;
-  transition:0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: left;
-}
-
-.card:hover{
-  transform:translateY(-12px);
-  border-color: var(--accent);
-  background: rgba(255,255,255,0.12);
-}
-
-.card h4 { margin-bottom: 10px; color: var(--accent); }
-
-.modal{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.85);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
-
-.modal-content{
-  background:#111827;
-  padding:40px;
-  border-radius:20px;
-  max-width:700px;
-  border: 1px solid var(--accent);
-}
-
-.close{
-  float:right;
-  cursor:pointer;
-  font-size: 1.5rem;
-}
-
-.filters{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.filters button{
-  margin:5px;
-  padding:10px 20px;
-  border-radius:25px;
-  border:1px solid var(--border);
-  background:transparent;
-  color:white;
-  cursor:pointer;
-  transition: 0.3s;
-}
-
-.filters button:hover, .filters button.active{
-  background:var(--accent);
-  border-color: var(--accent);
-}
-
-.skills-grid, .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
-
-.skills-grid .card, .contact-grid .card{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align: center;
-}
-
-.tag {
-    font-size: 0.7rem;
-    background: var(--accent);
-    padding: 2px 8px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-footer{
-  text-align:center;
-  padding:60px 40px;
-  opacity:0.6;
-  border-top: 1px solid var(--border);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .hero-text h1{font-size:2.5rem;}
-  .hero-img img{width:240px;}
-  nav{padding:15px 5%;}
-  nav div { display: none; } /* Hide desktop nav for mobile */
-  .section{padding:80px 5%;}
-}
-</style>
+        @media (max-width: 968px) {
+            .hero { flex-direction: column-reverse; text-align: center; height: auto; padding-top: 150px; }
+            h1 { font-size: 2.5rem; }
+            .about-features { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-  <strong>Amos Maina</strong>
-  <div>
-    <a href="#about">About</a>
-    <a href="#whatdo">Expertise</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Work</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <div class="mesh-bg"></div>
 
-<section class="hero">
-  <div class="hero-text">
-    <div class="tag">OPEN TO GLOBAL OPPORTUNITIES</div>
-    <h1>Architecting the Future of AI Systems</h1>
-    <p>I bridge the gap between complex AI research and enterprise-scale production. With a focus on RAG architectures and automated workflows, I build systems that don't just "talk"—they perform.</p>
-    <a href="#projects" class="btn">Explore Architecture</a>
-    <a href="#contact" class="btn btn-alt">Let's Talk</a>
-  </div>
-  <div class="hero-img">
-    <img src="profile.png" alt="Amos Maina">
-  </div>
-</section>
-
-<section class="achievements section" style="padding-top: 0;">
-    <div class="grid">
-        <div class="card" style="text-align: center;">
-            <h2 style="color: var(--accent); margin-bottom: 5px;">5+</h2>
-            <p>Years Experience</p>
+    <nav>
+        <div class="logo">AMOS.MAINA</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#what-i-do">Services</a>
+            <a href="#projects">Portfolio</a>
+            <a href="#contact">Contact</a>
         </div>
-        <div class="card" style="text-align: center;">
-            <h2 style="color: var(--accent); margin-bottom: 5px;">20+</h2>
-            <p>AI Agents Deployed</p>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tagline">AVAILABLE FOR PROJECTS</span>
+            <h1>Amos Maina</h1>
+            <h2 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;">AI Systems Architect & Automation Engineer</h2>
+            <p class="hero-desc">
+                Pioneering the next generation of intelligent systems. I specialize in building autonomous agents, RAG-powered intelligence, and high-scale enterprise automation that transforms how businesses operate.
+            </p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Start a Conversation</a>
+            </div>
         </div>
-        <div class="card" style="text-align: center;">
-            <h2 style="color: var(--accent); margin-bottom: 5px;">40%</h2>
-            <p>Avg. Automation ROI</p>
+        <div class="hero-image">
+            <img src="profile.png" alt="Amos Maina">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2>The Architect's Vision</h2>
+            <p class="hero-desc" style="margin: 0 auto;">With a deep foundation in full-stack development and a passion for Artificial Intelligence, I bridge the gap between complex neural architectures and user-centric business software.</p>
+        </div>
+        <div class="about-features">
+            <div class="card" style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400" alt="Collaboration">
+                <h3>Collaborative Growth</h3>
+                <p>I believe in the power of collective intelligence. Building systems that empower teams to achieve 10x output.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400" alt="Innovation">
+                <h3>Radical Innovation</h3>
+                <p>Pushing the boundaries of what's possible with LLMs, Vector Databases, and Agentic Workflows.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" alt="Learning">
+                <h3>Continuous Evolution</h3>
+                <p>In the fast-paced world of AI, I maintain a relentless learning cycle to stay ahead of the curve.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="what-i-do" class="section">
+        <div class="section-header">
+            <h2>Expertise & Solutions</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="ph ph-robot"></i>
+                <h3>AI Systems & Agents</h3>
+                <p>Autonomous agents capable of complex reasoning, tool-use, and multi-step task execution.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-code"></i>
+                <h3>Modern Web Apps</h3>
+                <p>High-performance interfaces built with React and Tailwind, optimized for speed and SEO.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-flow-arrow"></i>
+                <h3>Intelligent Workflows</h3>
+                <p>Automating repetitive enterprise tasks using LangFlow, Python, and cloud integrations.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-chats-teardrop"></i>
+                <h3>Custom RAG Solutions</h3>
+                <p>Retrieval-Augmented Generation systems that allow you to talk to your private data securely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('ai')">AI & RAG</button>
+            <button class="filter-btn" onclick="filterProjects('web')">Web Platforms</button>
+        </div>
+
+        <div class="grid" id="projectGrid">
+            <div class="card ai">
+                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&w=600" alt="AI Support">
+                <h3>AI Support Architect</h3>
+                <p>Intelligent customer support agent with 65% automated resolution rate.</p>
+                <button class="btn btn-outline" style="margin: 1rem 0 0 0;" onclick="openModal('Support Agent', 'A production-grade AI agent using GPT-4 and Zendesk API integration to handle ticket triaging and automated responses.')">See Project</button>
+            </div>
+            <div class="card ai">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600" alt="RAG System">
+                <h3>Document Q&A Assistant</h3>
+                <p>Enterprise RAG system for instant document querying across 50k+ pages.</p>
+                <button class="btn btn-outline" style="margin: 1rem 0 0 0;" onclick="openModal('Document Intelligence', 'Built with Pinecone vector storage and LangChain, this tool enables context-aware search across internal corporate PDFs.')">See Project</button>
+            </div>
+            <div class="card web">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600" alt="Billing System">
+                <h3>ISP Billing Engine</h3>
+                <p>Full-stack automation for ISP subscription and automated invoicing.</p>
+                <button class="btn btn-outline" style="margin: 1rem 0 0 0;" onclick="openModal('ISP Billing', 'A robust Laravel-based platform managing thousands of active users with automated payment gateway integration.')">See Project</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2>Let's Build Something Intelligent</h2>
+            <p class="hero-desc" style="margin: 1rem auto 2rem auto;">Currently accepting new projects and high-impact engineering opportunities.</p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                <a href="mailto:amos@example.com" class="nav-links" style="color: white;"><i class="ph ph-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/amosmaina" class="nav-links" style="color: white;"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                <a href="https://wa.me/254741964877" class="nav-links" style="color: white;"><i class="ph ph-whatsapp-logo"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeModal()"><i class="ph ph-x"></i></span>
+            <h2 id="mTitle" style="color: var(--primary); margin-bottom: 1rem;">Project Title</h2>
+            <p id="mDesc" style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem;">Full project description goes here.</p>
+            <a href="#" class="btn btn-primary">Live Demo</a>
         </div>
     </div>
-</section>
 
-<section id="about" class="section about">
-  <h2>The Architect's Vision</h2>
-  <p class="section-subtitle">Combining Engineering Rigor with AI Innovation</p>
-  <p>
-    I'm Amos Maina, an AI Systems Architect and Automation Engineer based in Kenya. I specialize in designing high-availability systems that leverage Large Language Models (LLMs) via RAG and LangChain. 
-    My approach is rooted in **Scalability, Security, and Speed**. I don't just build chatbots; I build self-correcting automation pipelines that reduce operational costs and human error.
-  </p>
-  <div class="grid">
-    <div class="card">
-      <img src="teamwork.png" alt="Collaboration" width="60">
-      <h4>System Design</h4>
-      <p>I architect modular systems using microservices to ensure AI integrations are robust and future-proof.</p>
-    </div>
-    <div class="card">
-      <img src="innovation.png" alt="Innovation" width="60">
-      <h4>Prompt Engineering</h4>
-      <p>Mastering the art of structured outputs and few-shot learning to ensure AI models behave predictably.</p>
-    </div>
-    <div class="card">
-      <img src="growth.png" alt="Growth" width="60">
-      <h4>Data Strategy</h4>
-      <p>Optimizing vector databases and ETL pipelines to feed AI agents the most relevant context in milliseconds.</p>
-    </div>
-  </div>
-</section>
+    <footer style="padding: 4rem; text-align: center; color: var(--text-dim); border-top: 1px solid var(--border);">
+        <p>© 2026 Amos Maina | Designed for the AI Era</p>
+    </footer>
 
-<section id="whatdo" class="section what-do">
-  <h2>Technical Expertise</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="chatbot.png" alt="Chatbots" width="60">
-      <h4>Enterprise AI Agents</h4>
-      <p>Beyond simple FAQs. I build agents with "tool-use" capabilities (Agentic Workflows) that can interact with APIs and DBs.</p>
-    </div>
-    <div class="card">
-      <img src="automation.png" alt="Automation" width="60">
-      <h4>End-to-End Automation</h4>
-      <p>Workflow orchestration using Python, LangFlow, and Zapier to connect disparate business apps seamlessly.</p>
-    </div>
-    <div class="card">
-      <img src="platform.png" alt="Platforms" width="60">
-      <h4>Custom AI Dashboards</h4>
-      <p>Full-stack platforms (Laravel/Django) providing intuitive interfaces for complex AI-driven data analytics.</p>
-    </div>
-    <div class="card">
-      <img src="social.png" alt="Social Media" width="60">
-      <h4>Content Ecosystems</h4>
-      <p>Automated multi-channel content generation systems that maintain brand voice across all platforms.</p>
-    </div>
-  </div>
-</section>
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
 
-<section id="skills" class="section skills">
-  <h2>Technology Stack</h2>
-  <div class="skills-grid">
-    <div class="card"><h4>LLM Frameworks</h4><p>LangChain, LangFlow, OpenAI SDK, Ollama</p></div>
-    <div class="card"><h4>Backend Systems</h4><p>Python (Django), PHP (Laravel), Node.js</p></div>
-    <div class="card"><h4>Databases</h4><p>Pinecone (Vector), PostgreSQL, Redis, MongoDB</p></div>
-    <div class="card"><h4>DevOps</h4><p>Docker, AWS, Google Cloud, CI/CD Pipelines</p></div>
-  </div>
-</section>
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
 
-<section id="experience" class="section experience">
-  <h2>Professional Experience</h2>
-  <div class="grid">
-    <div class="card">
-      <h4>AI Systems Architect • Tech Solutions Ltd</h4>
-      <p style="color: var(--accent);">2022 - Present | Nairobi, Kenya</p>
-      <ul>
-        <li>Reduced operational overhead by 30% through custom AI automation agents.</li>
-        <li>Architected an enterprise-grade RAG system handling 10k+ daily document queries.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4>Automation Engineer • IoTConnect</h4>
-      <p style="color: var(--accent);">2020 - 2022 | Nairobi, Kenya</p>
-      <ul>
-        <li>Integrated AI agents with edge IoT devices for real-time predictive maintenance.</li>
-        <li>Led the transition from manual reporting to automated AI-summarized dashboards.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('#projectGrid .card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-<section id="projects" class="section">
-  <h2>Featured Architecture</h2>
-  <div class="filters">
-    <button class="active" onclick="filter('all')">All Projects</button>
-    <button onclick="filter('ai')">AI & RAG</button>
-    <button onclick="filter('platform')">Enterprise Platforms</button>
-  </div>
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
- <div class="grid" id="projectGrid"> 
-    <div class="card ai" onclick="openModal('Agentic Support Suite','High-impact system integrating Zendesk with GPT-4 agents to resolve 65% of tickets without human intervention.')"> 
-      <div class="tag">AI System</div>
-      <h3>Agentic Support Suite</h3> 
-    </div> 
-    <div class="card ai" onclick="openModal('RAG Document Intelligence','A system utilizing Pinecone and LangChain to allow 100ms retrieval across 50,000 corporate documents.')"> 
-        <div class="tag">RAG</div>
-        <h3>Document Intelligence</h3> 
-    </div> 
-    <div class="card platform" onclick="openModal('Indepth Research (IRES)','A professional training website for Indepth Research (IRES), built with Laravel, showcasing courses and programs.')"> <h3>Indepth Research (IRES)</h3> </div> 
-    <div class="card platform" onclick="openModal('Internet Billing System','A robust billing platform to manage ISP subscriptions, monitor usage, and automate invoicing and payments.')"> <h3>Internet Billing System</h3> </div> 
-    </div> 
-</section>
+        // Modal Logic
+        function openModal(title, desc) {
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mDesc').innerText = desc;
+            document.getElementById('projectModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
 
-<section id="github" class="section">
-  <h2>Live Code & Contributions</h2>
-  <div class="grid" id="repos"></div>
-</section>
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-<section id="contact" class="section contact">
-  <h2>Get In Touch</h2>
-  <p>Available for high-impact AI consultations and engineering roles.</p>
-  <div class="contact-grid">
-    <div class="card"><h4>Email</h4><p>amos@example.com</p></div>
-    <div class="card"><h4>WhatsApp</h4><p><a href="https://wa.me/254741964877" style="color:white;text-decoration:none;">+254 741 964 877</a></p></div>
-    <div class="card"><h4>LinkedIn</h4><p><a href="https://linkedin.com/in/amosmaina" style="color:white;text-decoration:none;">Amos Maina</a></p></div>
-  </div>
-</section>
-
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">✖</span>
-    <h3 id="modalTitle" style="color: var(--accent); margin-bottom: 15px;"></h3>
-    <p id="modalDesc" style="font-size: 1.1rem; opacity: 0.9;"></p>
-  </div>
-</div>
-
-<footer>
-© 2026 Amos Maina | Building Intelligent Systems for the Global Market
-</footer>
-
-<script>
-function filter(type){
-  let cards=document.querySelectorAll('#projectGrid .card');
-  let btns=document.querySelectorAll('.filters button');
-  btns.forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-
-  cards.forEach(card=>{
-    if(type==='all'){card.style.display='block'}
-    else if(card.classList.contains(type)){card.style.display='block'}
-    else{card.style.display='none'}
-  })
-}
-
-function openModal(title,desc){
-  document.getElementById('modalTitle').innerText=title;
-  document.getElementById('modalDesc').innerText=desc;
-  document.getElementById('modal').style.display='flex';
-}
-
-function closeModal(){
-  document.getElementById('modal').style.display='none';
-}
-
-// GitHub Auto Integration - FIXED Syntax
-fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos')
-.then(res=>res.json())
-.then(data=>{
-  let container=document.getElementById('repos');
-  if(data && Array.isArray(data)) {
-      data.slice(0,6).forEach(repo=>{
-        let div=document.createElement('div');
-        div.className='card';
-        div.innerHTML=`<h3>${repo.name}</h3><p>${repo.description||'Live system code on GitHub.'}</p>`;
-        container.appendChild(div);
-      });
-  }
-});
-</script>
-
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('projectModal')) closeModal();
+        }
+    </script>
 </body>
 </html>

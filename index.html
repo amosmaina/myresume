@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amos Maina Muthee | AI & Full Stack Engineer</title>
+<title>Amos Maina | AI Systems & Automation Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#000;
-  --text:#fff;
-  --muted:#aaa;
-  --card:#111;
-  --accent:#0071e3;
+:root{
+  --bg:#0b0f19;
+  --card:#111827;
+  --text:#ffffff;
+  --muted:#9ca3af;
+  --accent:#3b82f6;
 }
 
-.light {
-  --bg:#f5f5f7;
-  --text:#000;
-  --muted:#555;
-  --card:#fff;
-  --accent:#0071e3;
+.light{
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#4b5563;
+  --accent:#2563eb;
 }
 
 *{
@@ -38,38 +38,27 @@ body{
   transition:0.4s;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 20px;
-}
-
 nav{
   position:sticky;
   top:0;
   backdrop-filter:blur(20px);
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.6);
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   z-index:1000;
-  transition:0.3s;
 }
 
 .light nav{
   background:rgba(255,255,255,0.8);
 }
 
-.nav-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 0;
-}
-
 nav a{
-  text-decoration:none;
   color:var(--text);
-  margin-left:20px;
+  text-decoration:none;
+  margin-left:25px;
   font-size:14px;
-  transition:0.3s;
 }
 
 nav a:hover{
@@ -78,31 +67,28 @@ nav a:hover{
 
 .hero{
   text-align:center;
-  padding:120px 20px;
+  padding:140px 10%;
 }
 
 .hero h1{
-  font-size:3rem;
+  font-size:3.2rem;
   font-weight:700;
-  letter-spacing:-1px;
 }
 
 .hero p{
   margin-top:20px;
   color:var(--muted);
-  max-width:600px;
+  max-width:700px;
   margin-inline:auto;
-  font-size:1.1rem;
 }
 
 .btn{
   display:inline-block;
-  padding:12px 22px;
-  margin:10px;
+  padding:12px 24px;
+  margin:15px 10px;
   border-radius:30px;
   text-decoration:none;
   font-weight:500;
-  transition:0.3s;
 }
 
 .primary{
@@ -110,19 +96,14 @@ nav a:hover{
   color:white;
 }
 
-.outline{
-  border:1px solid var(--accent);
-  color:var(--accent);
-}
-
 .section{
-  padding:100px 0;
-  text-align:center;
+  padding:100px 8%;
 }
 
 .section h2{
+  text-align:center;
+  margin-bottom:50px;
   font-size:2rem;
-  margin-bottom:40px;
 }
 
 .grid{
@@ -134,12 +115,13 @@ nav a:hover{
 .card{
   background:var(--card);
   padding:30px;
-  border-radius:20px;
+  border-radius:16px;
   transition:0.3s;
+  cursor:pointer;
 }
 
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-6px);
 }
 
 .card h3{
@@ -148,18 +130,7 @@ nav a:hover{
 
 .card p{
   color:var(--muted);
-  font-size:0.95rem;
-}
-
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
+  font-size:0.9rem;
 }
 
 footer{
@@ -176,118 +147,131 @@ footer{
   border-radius:20px;
   font-size:12px;
 }
-
-@media(max-width:600px){
-  .hero h1{
-    font-size:2rem;
-  }
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="container nav-inner">
-    <strong>Amos</strong>
-    <div>
-      <a href="#projects">Projects</a>
-      <a href="https://github.com/amosmaina">GitHub</a>
-      <a href="#hire">Hire Me</a>
-      <a href="yourcv.pdf" download class="btn outline">Download CV</a>
-      <span class="toggle" onclick="toggleMode()">Mode</span>
-    </div>
+  <strong>Amos Maina</strong>
+  <div>
+    <a href="#ai">AI Systems</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#websites">Websites</a>
+    <a href="yourcv.pdf" download>Download CV</a>
+    <span class="toggle" onclick="toggleMode()">Mode</span>
   </div>
 </nav>
 
-<section class="hero fade">
-  <h1>AI Automation & Full Stack Engineer</h1>
+<section class="hero">
+  <h1>AI Systems & Automation Engineer</h1>
   <p>
-    I design scalable digital platforms, AI-driven automation systems,
-    ISP billing architectures, and enterprise learning solutions.
+    I design intelligent AI agents, automation workflows, enterprise platforms,
+    and scalable digital systems that help organizations operate smarter,
+    faster, and more efficiently.
   </p>
-  <a href="#projects" class="btn primary">View Work</a>
+  <a href="https://wa.me/254741964877" class="btn primary">Hire Me</a>
 </section>
 
-<section id="projects" class="section fade">
-  <h2>Featured Work</h2>
+<section id="ai" class="section">
+  <h2>AI Systems & Automation</h2>
   <div class="grid">
+
     <div class="card">
-      <h3>Momentas Learning LMS</h3>
-      <p>WordPress + Moodle integration with automated payments and CRM workflows.</p>
+      <h3>AI Customer Support Chatbot</h3>
+      <p>24/7 intelligent chatbot for automated customer service across web and messaging platforms.</p>
     </div>
+
     <div class="card">
-      <h3>Hotspot Billing System</h3>
-      <p>Django + MikroTik + M-Pesa real-time provisioning system.</p>
+      <h3>Document Q&A Assistant (RAG)</h3>
+      <p>Retrieval-augmented AI assistant that answers questions from uploaded documents.</p>
     </div>
+
     <div class="card">
-      <h3>AI Chatbot & FAQ Engine</h3>
-      <p>LangFlow + Local LLM intelligent automation platform.</p>
+      <h3>Task & Workflow Automation Agent</h3>
+      <p>AI-driven task creation, assignment, and tracking system for teams.</p>
     </div>
+
+    <div class="card">
+      <h3>Lead Qualification Chatbot</h3>
+      <p>Automated lead capture and qualification AI for websites and messaging apps.</p>
+    </div>
+
+    <div class="card">
+      <h3>FAQ & Knowledge Base AI</h3>
+      <p>Instant AI answers from manuals and internal knowledge sources.</p>
+    </div>
+
+    <div class="card">
+      <h3>Email Auto-Responder & Summarizer</h3>
+      <p>Reads emails, summarizes content, and drafts professional replies automatically.</p>
+    </div>
+
   </div>
 </section>
 
-<section id="github" class="section fade">
-  <h2>Live GitHub Projects</h2>
-  <div class="grid" id="repo-container"></div>
+<section id="platforms" class="section">
+  <h2>Enterprise Platforms</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Internet Billing System</h3>
+      <p>ISP subscription management, automated invoicing, and user monitoring platform.</p>
+    </div>
+
+    <div class="card">
+      <h3>Indepth Research (Laravel)</h3>
+      <p>Professional training website showcasing sector-specific programs.</p>
+    </div>
+
+    <div class="card">
+      <h3>Momentas Learning (WordPress LMS)</h3>
+      <p>Online learning platform with progress tracking and course management.</p>
+    </div>
+
+    <div class="card">
+      <h3>Presidential Library (Drupal)</h3>
+      <p>Archival and research-focused institutional platform.</p>
+    </div>
+
+  </div>
 </section>
 
-<section id="hire" class="section fade">
-  <h2>Let’s Work Together</h2>
-  <p style="color:var(--muted);max-width:600px;margin:auto;">
-    Available for freelance projects, automation systems,
-    LMS integrations, AI development and network solutions.
-  </p>
-  <br>
-  <a href="https://wa.me/2547XXXXXXXX" class="btn primary">Hire Me on WhatsApp</a>
+<section id="websites" class="section">
+  <h2>Corporate Websites</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Printafrika</h3>
+      <p>Modern printing services website with lead capture features.</p>
+    </div>
+
+    <div class="card">
+      <h3>IoTConnect</h3>
+      <p>IoT solutions website with interactive service pages.</p>
+    </div>
+
+    <div class="card">
+      <h3>Pentagon Web</h3>
+      <p>Corporate website with service highlights and project showcase.</p>
+    </div>
+
+    <div class="card">
+      <h3>Techit</h3>
+      <p>Professional IT solutions website with clean modern interface.</p>
+    </div>
+
+  </div>
 </section>
 
 <footer>
-  © 2026 Amos Maina Muthee • Built for GitHub Pages
+  © 2026 Amos Maina • AI Systems & Automation Engineer
 </footer>
 
 <script>
-// Dark Mode Toggle (Saved)
 function toggleMode(){
   document.body.classList.toggle("light");
-  localStorage.setItem("mode",document.body.classList.contains("light")?"light":"dark");
 }
-
-if(localStorage.getItem("mode")==="light"){
-  document.body.classList.add("light");
-}
-
-// Scroll Animation
-const fades=document.querySelectorAll(".fade");
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-});
-fades.forEach(f=>observer.observe(f));
-
-// GitHub Repo Fetch
-fetch("https://api.github.com/users/YOUR_GITHUB_USERNAME/repos")
-.then(res=>res.json())
-.then(data=>{
-  const container=document.getElementById("repo-container");
-  data.slice(0,6).forEach(repo=>{
-    const div=document.createElement("div");
-    div.className="card";
-    div.innerHTML=`
-      <h3>${repo.name}</h3>
-      <p>${repo.description || "No description provided."}</p>
-      <br>
-      <a href="${repo.html_url}" target="_blank" class="btn outline">View Repo</a>
-    `;
-    container.appendChild(div);
-  });
-})
-.catch(err=>{
-  document.getElementById("repo-container").innerHTML="<p>Unable to load repositories.</p>";
-});
 </script>
 
 </body>

@@ -1,480 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amos Maina | AI Systems Architect & Automation Engineer</title>
+    <!-- ================= META ================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="AI Systems Architect specializing in AI agents, automation, enterprise platforms, and intelligent business systems.">
-<meta name="keywords" content="AI Engineer, Automation Engineer, LangFlow, Laravel, Django, AI Chatbots, Kenya Developer">
-<meta name="author" content="Amos Maina">
+    <title>Amos Maina | AI Systems Architect & Automation Engineer</title>
 
-<!-- Open Graph -->
-<meta property="og:title" content="Amos Maina | AI Systems Architect">
-<meta property="og:description" content="Building intelligent AI systems and automation platforms.">
-<meta property="og:type" content="website">
+    <meta name="description"
+        content="AI Systems Architect specializing in AI agents, automation, enterprise platforms, and intelligent business systems.">
+    <meta name="keywords"
+        content="AI Engineer, Automation Engineer, LangFlow, Laravel, Django, AI Chatbots, Kenya Developer">
+    <meta name="author" content="Amos Maina">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Amos Maina | AI Systems Architect">
+    <meta property="og:description" content="Building intelligent AI systems and automation platforms.">
+    <meta property="og:type" content="website">
 
-<style>
-:root{
-  --bg1:#0f172a;
-  --bg2:#1e293b;
-  --glass:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.15);
-  --text:#ffffff;
-  --accent:#3b82f6;
-}
+    <!-- ================= FONTS ================= -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
-body{
-  background:linear-gradient(-45deg,var(--bg1),var(--bg2),#111827,#0f172a);
-  background-size:400% 400%;
-  animation:gradient 15s ease infinite;
-  color:var(--text);
-  overflow-x:hidden;
-  scroll-behavior:smooth;
-}
+    <!-- ================= STYLES ================= -->
+    <style>
+        /* ===== Root Variables ===== */
+        :root {
+            --bg1: #0f172a;
+            --bg2: #1e293b;
+            --glass: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.15);
+            --text: #ffffff;
+            --accent: #3b82f6;
+        }
 
-@keyframes gradient{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
+        /* ===== Global Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-nav{
-  position:fixed;
-  width:100%;
-  padding:20px 8%;
-  display:flex;
-  justify-content:space-between;
-  backdrop-filter:blur(20px);
-  background:var(--glass);
-  border-bottom:1px solid var(--border);
-  z-index:1000;
-}
+        body {
+            background: linear-gradient(-45deg, var(--bg1), var(--bg2), #111827, #0f172a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: var(--text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
-}
+        /* ===== Animations ===== */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%
+            }
 
-nav a:hover{color:var(--accent);}
+            50% {
+                background-position: 100% 50%
+            }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 8%;
-  gap:60px;
-  flex-wrap:wrap;
-}
+            100% {
+                background-position: 0% 50%
+            }
+        }
 
-.hero-text{
-  max-width:600px;
-  animation:fadeUp 1.2s ease forwards;
-}
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
 
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.hero-text h1{
-  font-size:3rem;
-  font-weight:700;
-}
+        @keyframes float {
 
-.hero-text p{
-  margin:20px 0;
-  opacity:0.85;
-  line-height:1.6;
-}
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
-.btn{
-  padding:12px 25px;
-  background:var(--accent);
-  border:none;
-  border-radius:30px;
-  color:white;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-  transition:0.3s;
-}
+            50% {
+                transform: translateY(-20px);
+            }
+        }
 
-.btn:hover{background:#2563eb;}
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
 
-.hero-img img{
-  width:320px;
-  border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
-  animation:float 6s ease-in-out infinite;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
 
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-20px);}
-}
+        nav a:hover {
+            color: var(--accent);
+        }
 
-.section{
-  padding:120px 8%;
-}
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8%;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
 
-.section h2{
-  text-align:center;
-  margin-bottom:50px;
-}
+        .hero-text {
+            max-width: 600px;
+            animation: fadeUp 1.2s ease forwards;
+        }
 
-.about, .what-do, .skills, .experience, .education, .contact{
-  max-width:1000px;
-  margin:0 auto 80px auto;
-  text-align:center;
-  opacity:0.95;
-  line-height:1.6;
-}
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
 
-.grid{
-  display:grid;
-  gap:25px;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
+        .hero-text p {
+            margin: 20px 0;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
 
-.card{
-  background:var(--glass);
-  padding:25px;
-  border-radius:20px;
-  backdrop-filter:blur(20px);
-  border:1px solid var(--border);
-  cursor:pointer;
-  transition:0.3s;
-}
+        .hero-img img {
+            width: 320px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
 
-.card:hover{
-  transform:translateY(-8px);
-}
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 12px 25px;
+            background: var(--accent);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
 
-.modal{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.7);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
+        .btn:hover {
+            background: #2563eb;
+        }
 
-.modal-content{
-  background:#111827;
-  padding:40px;
-  border-radius:20px;
-  max-width:700px;
-}
+        /* ===== Sections ===== */
+        .section {
+            padding: 120px 8%;
+        }
 
-.close{
-  float:right;
-  cursor:pointer;
-}
+        .section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-.filters{
-  text-align:center;
-  margin-bottom:40px;
-}
+        .about,
+        .what-do,
+        .skills,
+        .experience,
+        .education,
+        .contact {
+            max-width: 1000px;
+            margin: 0 auto 80px auto;
+            text-align: center;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
 
-.filters button{
-  margin:5px;
-  padding:8px 18px;
-  border-radius:20px;
-  border:1px solid var(--border);
-  background:transparent;
-  color:white;
-  cursor:pointer;
-}
+        /* ===== Grids ===== */
+        .grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
 
-.filters button:hover{
-  background:var(--accent);
-}
+        .skills-grid,
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
 
-.skills-grid, .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
+        /* ===== Cards ===== */
+        .card {
+            background: var(--glass);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.skills-grid .card, .contact-grid .card{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-}
+        .card:hover {
+            transform: translateY(-8px);
+        }
 
-footer{
-  text-align:center;
-  padding:40px;
-  opacity:0.6;
-}
+        .skills-grid .card,
+        .contact-grid .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
 
-/* Responsive */
-@media(max-width:768px){
-  .hero-text h1{font-size:2.2rem;}
-  .hero-img img{width:240px;}
-  nav{padding:15px 5%;}
-  .section{padding:80px 5%;}
-}
-</style>
+        /* ===== Filters ===== */
+        .filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .filters button {
+            margin: 5px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        .filters button:hover {
+            background: var(--accent);
+        }
+
+        /* ===== Modal ===== */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: #111827;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 700px;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.6;
+        }
+
+        /* ===== Responsive ===== */
+        @media(max-width:768px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-img img {
+                width: 240px;
+            }
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-  <strong>Amos Maina</strong>
-  <div>
-    <a href="#about">About Me</a>
-    <a href="#whatdo">What I Do</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <!-- ================= NAVIGATION ================= -->
+    <nav>
+        <strong>Amos Maina</strong>
+        <div>
+            <a href="#about">About Me</a>
+            <a href="#whatdo">What I Do</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>AI Systems Architect & Automation Engineer</h1>
-    <p>I build intelligent AI agents, enterprise automation systems, and scalable digital platforms that help organizations operate smarter and more efficiently. From AI chatbots to workflow automation, I craft solutions that bring measurable impact.</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </div>
-  <div class="hero-img">
-    <img src="profile.png" alt="Amos Maina">
-  </div>
-</section>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>AI Systems Architect & Automation Engineer</h1>
+            <p>
+                I build intelligent AI agents, enterprise automation systems, and scalable digital platforms that help
+                organizations operate smarter and more efficiently.
+            </p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
 
-<!-- About Me -->
-<section id="about" class="section about">
-  <h2>About Me</h2>
-  <p>
-    I'm Amos Maina, an AI Systems Architect and Automation Engineer based in Kenya. I have over 5 years of experience designing and implementing AI-driven solutions, automation workflows, and enterprise platforms.
-    I specialize in LangFlow, Laravel, Django, and other modern web technologies. My passion is leveraging technology to solve real-world problems, optimize business operations, and create intelligent systems that learn and adapt.
-  </p>
-  <div class="grid">
-    <div class="card">
-      <img src="teamwork.png" alt="Collaboration" width="80">
-      <h4>Collaboration</h4>
-      <p>I work closely with stakeholders to ensure systems align with business goals and user needs.</p>
-    </div>
-    <div class="card">
-      <img src="innovation.png" alt="Innovation" width="80">
-      <h4>Innovation</h4>
-      <p>I design creative AI and automation solutions that streamline processes and add value.</p>
-    </div>
-    <div class="card">
-      <img src="growth.png" alt="Growth" width="80">
-      <h4>Continuous Learning</h4>
-      <p>Staying up-to-date with AI, cloud, and automation technologies to deliver cutting-edge solutions.</p>
-    </div>
-  </div>
-</section>
+        <div class="hero-img">
+            <img src="profile.png" alt="Amos Maina">
+        </div>
+    </section>
 
-<!-- What I Do -->
-<section id="whatdo" class="section what-do">
-  <h2>What I Do</h2>
-  <p>
-    I develop AI-powered platforms and automation tools that improve efficiency, reduce manual workload, and drive smarter decision-making.
-    My projects include AI chatbots, RAG-based document assistants, workflow automation systems, social media automation tools, enterprise platforms, and intelligent business applications.
-  </p>
-  <div class="grid">
-    <div class="card">
-      <img src="chatbot.png" alt="Chatbots" width="80">
-      <h4>AI Chatbots</h4>
-      <p>Custom conversational agents that interact naturally with users, handling support, queries, and lead qualification.</p>
-    </div>
-    <div class="card">
-      <img src="automation.png" alt="Automation" width="80">
-      <h4>Workflow Automation</h4>
-      <p>Automating repetitive tasks, scheduling, and notifications to save time and improve team productivity.</p>
-    </div>
-    <div class="card">
-      <img src="platform.png" alt="Platforms" width="80">
-      <h4>Enterprise Platforms</h4>
-      <p>Designing scalable platforms for education, research, billing, and management systems with robust integrations.</p>
-    </div>
-    <div class="card">
-      <img src="social.png" alt="Social Media" width="80">
-      <h4>Social Media Automation</h4>
-      <p>AI tools to generate posts, analyze engagement, and manage multiple platforms efficiently.</p>
-    </div>
-  </div>
-</section>
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section about">
+        <h2>About Me</h2>
 
-<!-- Skills -->
-<section id="skills" class="section skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="card">
-      <img src="ai.png" alt="AI" width="60">
-      <h4>AI & Machine Learning</h4>
-    </div>
-    <div class="card">
-      <img src="langflow.png" alt="LangFlow" width="60">
-      <h4>LangFlow & RAG Systems</h4>
-    </div>
-    <div class="card">
-      <img src="laravel.png" alt="Laravel" width="60">
-      <h4>Laravel & PHP</h4>
-    </div>
-    <div class="card">
-      <img src="django.png" alt="Django" width="60">
-      <h4>Django & Python</h4>
-    </div>
-    <div class="card">
-      <img src="js.png" alt="JavaScript" width="60">
-      <h4>JavaScript & Frontend</h4>
-    </div>
-    <div class="card">
-      <img src="cloud.png" alt="Cloud" width="60">
-      <h4>Cloud & DevOps</h4>
-    </div>
-  </div>
-</section>
+        <p>
+            I'm Amos Maina, an AI Systems Architect and Automation Engineer based in Kenya...
+        </p>
 
-<!-- Work Experience -->
-<section id="experience" class="section experience">
-  <h2>Work Experience</h2>
-  <div class="grid">
-    <div class="card">
-      <h4>AI Systems Architect • Tech Solutions Ltd</h4>
-      <p>2022 - Present | Nairobi, Kenya</p>
-      <p>Designed enterprise AI platforms, automated workflows, and built intelligent agents to optimize operations.</p>
+        <div class="grid">
+
+            <div class="card">
+                <img src="teamwork.png" width="80">
+                <h4>Collaboration</h4>
+                <p>I work closely with stakeholders...</p>
+            </div>
+
+            <div class="card">
+                <img src="innovation.png" width="80">
+                <h4>Innovation</h4>
+                <p>I design creative AI solutions...</p>
+            </div>
+
+            <div class="card">
+                <img src="growth.png" width="80">
+                <h4>Continuous Learning</h4>
+                <p>Staying updated with AI & automation...</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <!-- NOTE: Duplicate section preserved but cleaned and formatted -->
+
+    <section id="projects" class="section">
+        <h2>Featured Projects</h2>
+
+        <div class="filters">
+            <button onclick="filter('all')">All</button>
+            <button onclick="filter('ai')">AI Systems</button>
+            <button onclick="filter('platform')">Platforms</button>
+            <button onclick="filter('web')">Websites</button>
+        </div>
+
+        <div class="grid" id="projectGrid">
+
+            <!-- AI Projects -->
+            <div class="card ai"
+                onclick="openModal('AI Customer Support Chatbot','An intelligent chatbot...')">
+                <h3>AI Customer Support Chatbot</h3>
+            </div>
+
+            <div class="card ai"
+                onclick="openModal('Document Q&A Assistant (RAG)','An AI-powered assistant...')">
+                <h3>Document Q&A Assistant (RAG)</h3>
+            </div>
+
+            <!-- Platform Projects -->
+            <div class="card platform"
+                onclick="openModal('Indepth Research (IRES)','Professional training website built with Laravel.')">
+                <h3>Indepth Research (IRES)</h3>
+            </div>
+
+            <!-- Website Projects -->
+            <div class="card web"
+                onclick="openModal('Printafrika Website','Responsive website showcasing services.')">
+                <h3>Printafrika Website</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GITHUB ================= -->
+    <section id="github" class="section">
+        <h2>GitHub Repositories</h2>
+        <div class="grid" id="repos"></div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section contact">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact-grid">
+
+            <div class="card">
+                <img src="email.png" width="50">
+                <h4>Email</h4>
+                <p>amos@example.com</p>
+            </div>
+
+            <div class="card">
+                <img src="phone.png" width="50">
+                <h4>WhatsApp</h4>
+                <p><a href="https://wa.me/254741964877" style="color:white;">+254 741 964 877</a></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= MODAL ================= -->
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">✖</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDesc"></p>
+        </div>
+
     </div>
-    <div class="card">
-      <h4>Automation Engineer • IoTConnect</h4>
-      <p>2020 - 2022 | Nairobi, Kenya</p>
-      <p>Implemented process automation systems, integrating AI agents with IoT devices and cloud solutions.</p>
-    </div>
-    <div class="card">
-      <h4>Web Developer & AI Consultant • Freelance</h4>
-      <p>2018 - 2020 | Remote</p>
-      <p>Built AI-powered web applications, chatbots, and automation tools for local and international clients.</p>
-    </div>
-  </div>
-</section>
 
-<!-- Education -->
-<section id="education" class="section education">
-  <h2>Education</h2>
-  <div class="grid">
-    <div class="card">
-      <h4>BSc Computer Science</h4>
-      <p>University of Nairobi | 2014 - 2018</p>
-    </div>
-    <div class="card">
-      <h4>AI & Automation Certifications</h4>
-      <p>Coursera, Udemy | 2019 - 2023</p>
-    </div>
-  </div>
-</section>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        © 2026 Amos Maina • AI Systems Architect & Automation Engineer
+    </footer>
 
-<!-- Projects -->
-<section id="projects" class="section">
-  <h2>Featured Projects</h2>
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        function filter(type) {
+            let cards = document.querySelectorAll('.card');
 
-  <div class="filters">
-    <button onclick="filter('all')">All</button>
-    <button onclick="filter('ai')">AI Systems</button>
-    <button onclick="filter('platform')">Platforms</button>
-    <button onclick="filter('web')">Websites</button>
-  </div>
+            cards.forEach(card => {
+                if (type === 'all') card.style.display = 'block';
+                else if (card.classList.contains(type)) card.style.display = 'block';
+                else card.style.display = 'none';
+            });
+        }
 
-<!-- Projects --> <section id="projects" class="section"> <h2>Featured Projects</h2> <div class="filters"> <button onclick="filter('all')">All</button> <button onclick="filter('ai')">AI Systems</button> <button onclick="filter('platform')">Platforms</button> <button onclick="filter('web')">Websites</button> </div> <div class="grid" id="projectGrid"> <!-- AI Projects --> <div class="card ai" onclick="openModal('AI Customer Support Chatbot','An intelligent chatbot that automatically answers customer questions via website chat or messaging platforms, providing fast, accurate, 24/7 support while reducing manual workload.')"> <h3>AI Customer Support Chatbot</h3> </div> <div class="card ai" onclick="openModal('Document Q&A Assistant (RAG)','An AI-powered assistant that lets users upload documents and instantly get accurate answers using retrieval-augmented generation (RAG).')"> <h3>Document Q&A Assistant (RAG)</h3> </div> <div class="card ai" onclick="openModal('Task & Workflow Automation Agent','An AI agent that automatically creates, assigns, and tracks tasks across your team, streamlining workflows and sending notifications.')"> <h3>Task & Workflow Automation Agent</h3> </div> <div class="card ai" onclick="openModal('Lead Qualification Chatbot','An AI chatbot that interacts with potential leads via website chat or messaging apps, automatically qualifying them and collecting key information.')"> <h3>Lead Qualification Chatbot</h3> </div> <div class="card ai" onclick="openModal('FAQ & Knowledge Base AI Assistant','An AI assistant that answers questions instantly from your FAQs, manuals, or internal knowledge base.')"> <h3>FAQ & Knowledge Base AI Assistant</h3> </div> <div class="card ai" onclick="openModal('Meeting Scheduler Assistant','An AI assistant that automates meeting scheduling by understanding user requests, checking availability, and sending calendar invites.')"> <h3>Meeting Scheduler Assistant</h3> </div> <div class="card ai" onclick="openModal('Social Media Post Generator','An AI tool that creates engaging, platform-optimized social media content automatically.')"> <h3>Social Media Post Generator</h3> </div> <div class="card ai" onclick="openModal('Email Auto-responder & Summarizer','An AI assistant that reads emails, generates concise summaries, and drafts professional replies automatically.')"> <h3>Email Auto-responder & Summarizer</h3> </div> <!-- Platform Projects --> <div class="card platform" onclick="openModal('Indepth Research (IRES)','A professional training website for Indepth Research (IRES), built with Laravel, showcasing courses and programs.')"> <h3>Indepth Research (IRES)</h3> </div> <div class="card platform" onclick="openModal('Momentas Learning','An eLearning platform built with WordPress, delivering engaging online courses and tracking learner progress.')"> <h3>Momentas Learning</h3> </div> <div class="card platform" onclick="openModal('Presidential Library','A Drupal website showcasing library archives, collections, and events with intuitive navigation.')"> <h3>Presidential Library</h3> </div> <div class="card platform" onclick="openModal('Local Chatbot System','A fully local AI chatbot platform that delivers fast, secure, and offline conversational support.')"> <h3>Local Chatbot System</h3> </div> <div class="card platform" onclick="openModal('Internet Billing System','A robust billing platform to manage ISP subscriptions, monitor usage, and automate invoicing and payments.')"> <h3>Internet Billing System</h3> </div> <div class="card platform" onclick="openModal('Local FAQ Generator with Ollama','A locally hosted AI tool that generates accurate FAQ answers from your documents using Ollama.')"> <h3>Local FAQ Generator with Ollama</h3> </div> <!-- Website Projects --> <div class="card web" onclick="openModal('Printafrika Website','A modern, responsive website to showcase Printafrika’s printing services, featuring service pages and contact forms.')"> <h3>Printafrika Website</h3> </div> <div class="card web" onclick="openModal('IoTConnect','A professional website built to showcase IoTConnect’s IoT solutions and services, featuring interactive service pages and lead capture tools.')"> <h3>IoTConnect</h3> </div> <div class="card web" onclick="openModal('Pentagon Web','A responsive website developed to showcase Pentagon’s services and projects with clear navigation and engaging design.')"> <h3>Pentagon Web</h3> </div> <div class="card web" onclick="openModal('Techit','A professional website showcasing Techit’s IT solutions and services, with service pages, contact forms, and clean design.')"> <h3>Techit</h3> </div> </div> </section>
-</section>
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modal').style.display = 'flex';
+        }
 
-<!-- GitHub Section -->
-<section id="github" class="section">
-  <h2>GitHub Repositories</h2>
-  <div class="grid" id="repos"></div>
-</section>
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
 
-<!-- Contact -->
-<section id="contact" class="section contact">
-  <h2>Contact Me</h2>
-  <p>I'm open to freelance projects, collaboration, or full-time opportunities. Reach out using the links below or directly via email or WhatsApp.</p>
-  <div class="contact-grid">
-    <div class="card">
-      <img src="email.png" alt="Email" width="50">
-      <h4>Email</h4>
-      <p>amos@example.com</p>
-    </div>
-    <div class="card">
-      <img src="phone.png" alt="Phone" width="50">
-      <h4>WhatsApp</h4>
-      <p><a href="https://wa.me/254741964877" style="color:white;">+254 741 964 877</a></p>
-    </div>
-    <div class="card">
-      <img src="linkedin.png" alt="LinkedIn" width="50">
-      <h4>LinkedIn</h4>
-      <p><a href="https://linkedin.com/in/amosmaina" style="color:white;">linkedin.com/in/amosmaina</a></p>
-    </div>
-    <div class="card">
-      <img src="github.png" alt="GitHub" width="50">
-      <h4>GitHub</h4>
-      <p><a href="https://github.com/YOUR_GITHUB_USERNAME" style="color:white;">github.com/YOUR_GITHUB_USERNAME</a></p>
-    </div>
-  </div>
-</section>
+        /* ===== GitHub Integration ===== */
+        fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos')
+            .then(res => res.json())
+            .then(data => {
 
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">✖</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDesc"></p>
-  </div>
-</div>
+                let container = document.getElementById('repos');
 
-<footer>
-© 2026 Amos Maina • AI Systems Architect & Automation Engineer
-</footer>
+                data.slice(0, 6).forEach(repo => {
+                    let div = document.createElement('div');
 
-<script>
-function filter(type){
-  let cards=document.querySelectorAll('.card');
-  cards.forEach(card=>{
-    if(type==='all'){card.style.display='block'}
-    else if(card.classList.contains(type)){card.style.display='block'}
-    else{card.style.display='none'}
-  })
-}
+                    div.className = 'card';
+                    div.innerHTML =
+                        `<h3>${repo.name}</h3>
+                         <p>${repo.description || 'No description available.'}</p>`;
 
-function openModal(title,desc){
-  document.getElementById('modalTitle').innerText=title;
-  document.getElementById('modalDesc').innerText=desc;
-  document.getElementById('modal').style.display='flex';
-}
-
-function closeModal(){
-  document.getElementById('modal').style.display='none';
-}
-
-// GitHub Auto Integration
-fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos')
-.then(res=>res.json())
-.then(data=>{
-  let container=document.getElementById('repos');
-  data.slice(0,6).forEach(repo=>{
-    let div=document.createElement('div');
-    div.className='card';
-    div.innerHTML=`<h3>${repo.name}</h3><p>${repo.description||'No description available.'}</p>`;
-    container.appendChild(div);
-  });
-});
-</script>
+                    container.appendChild(div);
+                });
+            });
+    </script>
 
 </body>
+
 </html>

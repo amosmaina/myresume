@@ -26,13 +26,7 @@
   --accent:#3b82f6;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
-
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
 body{
   background:linear-gradient(-45deg,var(--bg1),var(--bg2),#111827,#0f172a);
   background-size:400% 400%;
@@ -130,23 +124,11 @@ nav a:hover{color:var(--accent);}
   margin-bottom:50px;
 }
 
-.filters{
+.about, .what-do{
+  max-width:900px;
+  margin:0 auto 80px auto;
   text-align:center;
-  margin-bottom:40px;
-}
-
-.filters button{
-  margin:5px;
-  padding:8px 18px;
-  border-radius:20px;
-  border:1px solid var(--border);
-  background:transparent;
-  color:white;
-  cursor:pointer;
-}
-
-.filters button:hover{
-  background:var(--accent);
+  opacity:0.9;
 }
 
 .grid{
@@ -183,12 +165,31 @@ nav a:hover{color:var(--accent);}
   background:#111827;
   padding:40px;
   border-radius:20px;
-  max-width:600px;
+  max-width:700px;
 }
 
 .close{
   float:right;
   cursor:pointer;
+}
+
+.filters{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.filters button{
+  margin:5px;
+  padding:8px 18px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:white;
+  cursor:pointer;
+}
+
+.filters button:hover{
+  background:var(--accent);
 }
 
 footer{
@@ -204,27 +205,45 @@ footer{
 <nav>
   <strong>Amos Maina</strong>
   <div>
+    <a href="#about">About Me</a>
+    <a href="#whatdo">What I Do</a>
     <a href="#projects">Projects</a>
     <a href="#github">GitHub</a>
     <a href="https://wa.me/254741964877">Hire Me</a>
   </div>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
   <div class="hero-text">
     <h1>AI Systems Architect & Automation Engineer</h1>
-    <p>
-      I build intelligent AI agents, enterprise automation systems, 
-      and scalable digital platforms that help organizations operate smarter.
-    </p>
+    <p>I build intelligent AI agents, enterprise automation systems, and scalable digital platforms that help organizations operate smarter and more efficiently.</p>
     <a href="#projects" class="btn">View My Work</a>
   </div>
-
   <div class="hero-img">
     <img src="profile.png" alt="Amos Maina">
   </div>
 </section>
 
+<!-- About Me -->
+<section id="about" class="section about">
+  <h2>About Me</h2>
+  <p>
+    I'm Amos Maina, an AI Systems Architect and Automation Engineer based in Kenya. I specialize in designing AI agents, enterprise automation systems, and intelligent business platforms. 
+    With experience in LangFlow, Laravel, Django, and modern web technologies, I help organizations optimize processes, reduce manual workload, and leverage AI for real-world impact.
+  </p>
+</section>
+
+<!-- What I Do -->
+<section id="whatdo" class="section what-do">
+  <h2>What I Do</h2>
+  <p>
+    I create AI-powered solutions that automate workflows, provide intelligent customer support, and improve operational efficiency. 
+    My work includes building AI chatbots, RAG-based document assistants, task and workflow automation systems, social media automation tools, and enterprise platforms for education, research, and business management.
+  </p>
+</section>
+
+<!-- Projects -->
 <section id="projects" class="section">
   <h2>Featured Projects</h2>
 
@@ -237,30 +256,91 @@ footer{
 
   <div class="grid" id="projectGrid">
 
-    <div class="card ai" onclick="openModal('AI Customer Support Chatbot','24/7 intelligent chatbot for automated customer service.')">
+    <!-- AI Projects -->
+    <div class="card ai" onclick="openModal('AI Customer Support Chatbot','An intelligent chatbot that automatically answers customer questions via website chat or messaging platforms, providing fast, accurate, 24/7 support while reducing manual workload.')">
       <h3>AI Customer Support Chatbot</h3>
     </div>
 
-    <div class="card ai" onclick="openModal('Document Q&A Assistant','Retrieval augmented AI assistant for documents.')">
+    <div class="card ai" onclick="openModal('Document Q&A Assistant (RAG)','An AI-powered assistant that lets users upload documents and instantly get accurate answers using retrieval-augmented generation (RAG).')">
       <h3>Document Q&A Assistant (RAG)</h3>
     </div>
 
-    <div class="card platform" onclick="openModal('Internet Billing System','ISP subscription and automation billing platform.')">
+    <div class="card ai" onclick="openModal('Task & Workflow Automation Agent','An AI agent that automatically creates, assigns, and tracks tasks across your team, streamlining workflows and sending notifications.')">
+      <h3>Task & Workflow Automation Agent</h3>
+    </div>
+
+    <div class="card ai" onclick="openModal('Lead Qualification Chatbot','An AI chatbot that interacts with potential leads via website chat or messaging apps, automatically qualifying them and collecting key information.')">
+      <h3>Lead Qualification Chatbot</h3>
+    </div>
+
+    <div class="card ai" onclick="openModal('FAQ & Knowledge Base AI Assistant','An AI assistant that answers questions instantly from your FAQs, manuals, or internal knowledge base.')">
+      <h3>FAQ & Knowledge Base AI Assistant</h3>
+    </div>
+
+    <div class="card ai" onclick="openModal('Meeting Scheduler Assistant','An AI assistant that automates meeting scheduling by understanding user requests, checking availability, and sending calendar invites.')">
+      <h3>Meeting Scheduler Assistant</h3>
+    </div>
+
+    <div class="card ai" onclick="openModal('Social Media Post Generator','An AI tool that creates engaging, platform-optimized social media content automatically.')">
+      <h3>Social Media Post Generator</h3>
+    </div>
+
+    <div class="card ai" onclick="openModal('Email Auto-responder & Summarizer','An AI assistant that reads emails, generates concise summaries, and drafts professional replies automatically.')">
+      <h3>Email Auto-responder & Summarizer</h3>
+    </div>
+
+    <!-- Platform Projects -->
+    <div class="card platform" onclick="openModal('Indepth Research (IRES)','A professional training website for Indepth Research (IRES), built with Laravel, showcasing courses and programs.')">
+      <h3>Indepth Research (IRES)</h3>
+    </div>
+
+    <div class="card platform" onclick="openModal('Momentas Learning','An eLearning platform built with WordPress, delivering engaging online courses and tracking learner progress.')">
+      <h3>Momentas Learning</h3>
+    </div>
+
+    <div class="card platform" onclick="openModal('Presidential Library','A Drupal website showcasing library archives, collections, and events with intuitive navigation.')">
+      <h3>Presidential Library</h3>
+    </div>
+
+    <div class="card platform" onclick="openModal('Local Chatbot System','A fully local AI chatbot platform that delivers fast, secure, and offline conversational support.')">
+      <h3>Local Chatbot System</h3>
+    </div>
+
+    <div class="card platform" onclick="openModal('Internet Billing System','A robust billing platform to manage ISP subscriptions, monitor usage, and automate invoicing and payments.')">
       <h3>Internet Billing System</h3>
     </div>
 
-    <div class="card web" onclick="openModal('IoTConnect Website','Professional IoT solutions showcase website.')">
+    <div class="card platform" onclick="openModal('Local FAQ Generator with Ollama','A locally hosted AI tool that generates accurate FAQ answers from your documents using Ollama.')">
+      <h3>Local FAQ Generator with Ollama</h3>
+    </div>
+
+    <!-- Website Projects -->
+    <div class="card web" onclick="openModal('Printafrika Website','A modern, responsive website to showcase Printafrika’s printing services, featuring service pages and contact forms.')">
+      <h3>Printafrika Website</h3>
+    </div>
+
+    <div class="card web" onclick="openModal('IoTConnect','A professional website built to showcase IoTConnect’s IoT solutions and services, featuring interactive service pages and lead capture tools.')">
       <h3>IoTConnect</h3>
+    </div>
+
+    <div class="card web" onclick="openModal('Pentagon Web','A responsive website developed to showcase Pentagon’s services and projects with clear navigation and engaging design.')">
+      <h3>Pentagon Web</h3>
+    </div>
+
+    <div class="card web" onclick="openModal('Techit','A professional website showcasing Techit’s IT solutions and services, with service pages, contact forms, and clean design.')">
+      <h3>Techit</h3>
     </div>
 
   </div>
 </section>
 
+<!-- GitHub Section -->
 <section id="github" class="section">
   <h2>GitHub Repositories</h2>
   <div class="grid" id="repos"></div>
 </section>
 
+<!-- Modal -->
 <div class="modal" id="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">✖</span>
@@ -270,7 +350,7 @@ footer{
 </div>
 
 <footer>
-© 2026 Amos Maina • AI Systems Architect
+© 2026 Amos Maina • AI Systems Architect & Automation Engineer
 </footer>
 
 <script>
@@ -293,7 +373,7 @@ function closeModal(){
   document.getElementById('modal').style.display='none';
 }
 
-/* GitHub Auto Integration */
+// GitHub Auto Integration (replace YOUR_GITHUB_USERNAME)
 fetch('https://api.github.com/users/YOUR_GITHUB_USERNAME/repos')
 .then(res=>res.json())
 .then(data=>{

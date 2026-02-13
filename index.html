@@ -778,6 +778,51 @@
             z-index: 10000;
             transition: width 0.1s ease;
         }
+        /* ===== MOBILE OVERFLOW FIX (ADD ONLY) ===== */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img, video, canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent hero glow from pushing layout */
+.hero::before {
+    max-width: 90vw;
+    max-height: 90vw;
+    right: -20%;
+}
+
+/* Fix grid forcing width on small screens */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}
+
+/* Ensure hero image never overflows */
+@media (max-width: 768px) {
+    .hero-image img {
+        max-width: 90vw;
+        height: auto;
+    }
+}
+
+/* Prevent any absolute/fixed animation from expanding page width */
+.mesh-bg,
+.particles {
+    overflow: hidden;
+}
+
+/* Extra safety: stop transforms from creating scroll */
+body {
+    overflow-x: clip;
+}
+
     </style>
 </head>
 <body>
